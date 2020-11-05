@@ -1,0 +1,63 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+
+@layer base {
+  /*! purgecss start ignore */
+  @font-face {
+    font-family: 'ProximanovaRegular';
+    src: url('../assets/font/PROXIMANOVA-REGULAR.OTF');
+  }
+
+  @font-face {
+    font-family: 'ProximanovaSemiBold';
+    src: url('../assets/font/PROXIMANOVA-SEMIBOLD.OTF');
+  }
+
+  @font-face {
+    font-family: 'ProximanovaExtraBold';
+    src: url('../assets/font/PROXIMANOVA-EXTRABOLD.OTF');
+  }
+
+  .ant-layout-header {
+    line-height: 0;
+  }
+
+  svg {
+    @apply align-baseline;
+  }
+
+  .ant-card-body {
+    @apply p-2;
+  }
+
+  .ant-menu-inline,
+  .ant-menu-vertical,
+  .ant-menu-vertical-left {
+    @apply border-none;
+  }
+
+  .trigger {
+    @apply text-xl;
+    @apply text-black;
+    @apply cursor-pointer;
+    @apply ml-2;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-400;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+  }
+
+  /*! purgecss end ignore */
+}
+
+@tailwind utilities;
