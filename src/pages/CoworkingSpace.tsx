@@ -13,7 +13,7 @@ export default function CoworkingSpace() {
   return (
     <Layout className="flex flex-col bg-white">
     
-      {/* Header Layout */}
+      {/* Header */}
       <Header 
         className='bg-black px-0 h-14' 
         style={{ position: 'sticky', zIndex: 1, width: '100%', height:'60px'}}
@@ -21,24 +21,20 @@ export default function CoworkingSpace() {
         <Navigation />
       </Header>
       
-      {/* Main Section Layout */}
+      {/* Main Section */}
       <Content>
 
-        {/* Hero Section Layout */}
-        <Row>
-          <Col span={16} className='mx-auto'>
-            <HeroSection />
-          </Col>
-        </Row>
+        {/* Hero Section */}
+        <HeroSection />
 
-        {/* Features Section Layout */}
+        {/* Features Section */}
         <Row>
           <Col span={16} className='mx-auto'>
             <FeatureSection />
           </Col>
         </Row>
         
-        {/* Locations Section Layout */}
+        {/* Locations Section */}
         <Row>
           <Col span={16} className='mx-auto'>
             <LocationSection />
