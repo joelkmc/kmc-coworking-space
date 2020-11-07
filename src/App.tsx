@@ -1,14 +1,14 @@
 import React from 'react';
 
+import CoworkingSpace from './pages/CoworkingSpace'
+
 import './styles/app.less';
 import './styles/main.css';
 
 function App() {
   return (
-    <div className='h-screen flex justify-center items-center'>
-      <p className='font-proxiExtraBold text-kmcOrange text-4xl'>
-        KMC Solutions
-      </p>
+    <div className='App'>
+      <CoworkingSpace />
     </div>
   );
 }
