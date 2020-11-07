@@ -16,13 +16,9 @@ export default function CoworkingSpace() {
       {/* Header Layout */}
       <Header 
         className='bg-black px-0 h-14' 
-        style={{ position: 'sticky', zIndex: 1, width: '100%' }}
+        style={{ position: 'sticky', zIndex: 1, width: '100%', height:'60px'}}
       >
-        <Row>
-          <Col span={16} className='mx-auto'>
-            <Navigation />
-          </Col>
-        </Row>
+        <Navigation />
       </Header>
       
       {/* Main Section Layout */}
