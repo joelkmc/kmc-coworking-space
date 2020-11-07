@@ -28,18 +28,10 @@ export default function CoworkingSpace() {
         <HeroSection />
 
         {/* Features Section */}
-        <Row>
-          <Col span={16} className='mx-auto'>
-            <FeatureSection />
-          </Col>
-        </Row>
+        <FeatureSection />
         
         {/* Locations Section */}
-        <Row>
-          <Col span={16} className='mx-auto'>
-            <LocationSection />
-          </Col>
-        </Row>
+        <LocationSection />
 
       </Content>
     
