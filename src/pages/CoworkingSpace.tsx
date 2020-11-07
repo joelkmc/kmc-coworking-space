@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Row, Col } from 'antd';
+import { Layout } from 'antd';
 
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
@@ -11,7 +11,7 @@ const { Header, Content } = Layout;
 export default function CoworkingSpace() {
 
   return (
-    <Layout className="flex flex-col bg-white">
+    <Layout className="flex flex-col bg-white mb-20">
     
       {/* Header */}
       <Header 
