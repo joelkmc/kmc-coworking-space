@@ -1,60 +1,70 @@
 import React from 'react'
-import { Row, Col, Select, Typography, Card, Carousel } from 'antd';
+import { 
+  Row, 
+  Col, 
+  Select, 
+  Typography, 
+  Card, 
+  Carousel,
+  Button
+} from 'antd';
 import { EnvironmentFilled } from '@ant-design/icons';
 import { locations, buildings } from '../assets/data/Location.data'
-import frabelle from '../assets/images/frabelle.jpg';
+import { PrevArrow, NextArrow } from '../utils/Arrows'
 
 const { Title, Paragraph } = Typography;
 const { Option } = Select;
-const { Meta } = Card;
 
-const carouselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  initialSlide: 0,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-}
 
 export default function LocationSection() {
+
+  const carouselSettings = {
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
 
   return (
     <Row>
       <Col 
         span={23}
-        lg={16}
-        className='mx-auto mt-10'
+        md={22}
+        xl={16}
+        className='mx-auto mt-10 bg'
       >
 
         {/* Location Input */}
-        <div className='flex flex-col sm:flex-row justify-between items-center px-2 sm:px-5 md:px-8 lg:px-0 xl:px-16'>
+        <div className='flex flex-col sm:flex-row justify-between items-center'>
           <Title 
             level={4} 
             className='font-proxiExtraBold' 
@@ -80,33 +90,45 @@ export default function LocationSection() {
         </div>
         
         {/* Location Cards Carousel */}
-        <Carousel {...carouselSettings} className='pb-10'>
+        <Carousel {...carouselSettings} arrows={ true } className='locations__carousel pb-10'>
         
           {/* Card Items */}
           {
             buildings.map(building => (
-              <div className="px-2">
+              <div className="px-2 mt-6">
                 <Card
                   bodyStyle={{ 
                     backgroundColor: 'rgba(0,0,0)', 
                     padding: '0 10px',
                     height: '220px'
                   }}
+                  className='rounded-md overflow-hidden'
                   bordered={ false }
                   cover={
-                    <img src={frabelle} alt={'frabelle'} />
+                    <img src={building.img} alt={'frabelle'} style={{ height: '180px' }} className='object-cover' />
                   }
                 >
-                  <div className="flex flex-col h-full">
-                    <h4 className='font-proxiExtraBold text-kmcOrange text-2xl justify-self-start'>
+                  <div className="flex flex-col h-full py-2">
+                    <h4 className='font-proxiExtraBold text-kmcOrange text-2xl justify-self-start leading-6'>
                       { building.name }
                     </h4>
-                    <h5 className="text-white font-proxiSemiBold text-1xl justify-self-center">
+                    <h5 className="text-white font-proxiSemiBold text-1xl justify-self-center mt-auto">
                       <EnvironmentFilled /> Taguig, Metro Manila
                     </h5>
-                    <Paragraph ellipsis={ true } className='text-white justify-self-center'>
+                    <Paragraph 
+                      ellipsis={ true } 
+                      className='text-white justify-self-center'
+                      style={{ marginBottom: 0 }}
+                    >
                       Our first office in Alabang, this facility features large office space with large panoramic window views.
                     </Paragraph>
+                    <div className="">
+                      <Button type='link' className='text-kmcOrange hover:text-orange-500 transition-all duration-150 ease-in cursor-pointer p-1'>
+                        Read More
+                      </Button>
+                    </div>
+
+                    <Button type='primary' className='mt-auto mb-3'>Book Now</Button>
                   </div>
                 </Card>
               </div>
