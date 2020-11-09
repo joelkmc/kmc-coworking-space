@@ -4,7 +4,6 @@ import { CaretRightOutlined } from '@ant-design/icons'
 import { HeroBGImgStyle, heroImages } from '../assets/data/HeroCarousel.data';
 import { ButtonType } from '../utils/ButtonType';
 import { ModalComp } from '../utils/ModalComp';
-import BookNowModal from '../components/BookNowModal';
 import useModalState from '../hooks/useModalState';
 
 import coworkingOrtigas from '../assets/images/coworking-ortigas.webp'
@@ -137,6 +136,7 @@ const HeroSection: React.FC = () => {
                 buttonClass='mt-4'
                 buttonType='primary'
                 text='Book Now'
+                handleClick={ handleBookNowOpen }
               />
             </div>
           </>
@@ -176,10 +176,31 @@ const HeroSection: React.FC = () => {
                   <strong>Unionbank Tower, Ortigas</strong> (Not Available for Coworking)
                 </p>
               </Space>
+              <ButtonType 
+                buttonClass='mt-4'
+                buttonType='primary'
+                text='Get Started'
+                handleClick={ handleBookNowOpen }
+              />
             </div>
           </>
         }
-      ></ModalComp>
+      />
+
+      {/* Book Now Modal */}
+      {/* <ModalComp
+        handleClose={ handleBookNowClose }
+        modalState={ bookNowModalState }
+        childComp={
+          <>
+            <div className="flex flex-col">
+              <h3 className='font-proxiExtraBold text-2xl justify-self-start leading-6 text-center'>
+                Breadcrumb
+              </h3>
+            </div>
+          </>
+        }
+      /> */}
 
     </Row>
   )
