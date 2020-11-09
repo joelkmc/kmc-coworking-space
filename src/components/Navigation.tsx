@@ -2,30 +2,22 @@ import React, { useState } from 'react'
 import { Space, Row, Col, Input, Modal } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 import { ButtonType } from '../utils/ButtonType';
+import useModalState from '../hooks/useModalState';
+import useInputState from '../hooks/useInputState';
 
 import CompanyLogo from '../assets/images/CompanyLogo.webp'
+
 const { Password } = Input
 
 export default function Navigation() {
 
-  const [modalState, setModalState] = useState<{ isVisible: boolean }>({ isVisible: false });
-
-  const handleClose = () => {
-    setModalState({ isVisible: false })
-  }
-
-  const handleOpen = () => {
-    setModalState({ isVisible: true })
-  }
-
-  console.log()
+  const [ modalState, handleClose, handleOpen ] = useModalState(false);
 
   return (
     <Row className='h-full'>
       <Col span={23} md={20} lg={16} className='flex w-full justify-between items-center px-4 mx-auto'>
 
-        <Space>
-          <img 
+        <Space>         <img 
             src={CompanyLogo} 
             alt='KMC-Logo' 
             className='w-auto' 
@@ -42,9 +34,10 @@ export default function Navigation() {
             />
         </Space>
 
+        {/* Modal */}
         <Modal
           centered
-          visible={ modalState.isVisible }
+          visible={ modalState }
           closeIcon='Close'
           className='loginModal'
           footer={ null }
@@ -59,18 +52,31 @@ export default function Navigation() {
 
           <form className='loginForm mt-5' onSubmit={ e => e.preventDefault() }>
             <Space direction="vertical" className='w-full'>
-              <Input placeholder="Email Address" />
+              {/* Email */}
+              <Input 
+                placeholder="Email Address" 
+                type='email'
+                name='email'
+              />
+
+              {/* Password */}
               <Password
                 placeholder="Password"
+                name='password'
+                type='password'
                 iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
               />
             </Space>
+
+            {/* Login Button */}
             <ButtonType
               buttonType='primary'
               buttonClass='w-full mt-5'
               text='Log in'
             />
           </form>
+
+          {/* forgot password link */}
           <ButtonType
             buttonType='link'
             buttonClass='p-0 mt-3'
