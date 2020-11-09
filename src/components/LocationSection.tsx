@@ -10,49 +10,12 @@ import {
 } from 'antd';
 import { EnvironmentFilled } from '@ant-design/icons';
 import { locations, buildings } from '../assets/data/Location.data'
-import { PrevArrow, NextArrow } from '../utils/Arrows'
+import { locationsCarouselSettings } from '../utils/CarouselSetting';
 
 const { Title, Paragraph } = Typography;
 const { Option } = Select;
 
-
 export default function LocationSection() {
-
-  const carouselSettings = {
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  }
 
   return (
     <Row>
@@ -90,7 +53,7 @@ export default function LocationSection() {
         </div>
         
         {/* Location Cards Carousel */}
-        <Carousel {...carouselSettings} arrows={ true } className='locations__carousel pb-10'>
+        <Carousel {...locationsCarouselSettings} arrows={ true } className='locations__carousel pb-10'>
         
           {/* Card Items */}
           {
