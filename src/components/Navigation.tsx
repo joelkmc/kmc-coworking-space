@@ -1,13 +1,28 @@
-import React from 'react'
-import { Space, Row, Col } from 'antd';
+import React, { useState } from 'react'
+import { Space, Row, Col, Input, Modal } from 'antd';
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 import { ButtonType } from '../utils/ButtonType';
 
 import CompanyLogo from '../assets/images/CompanyLogo.webp'
+const { Password } = Input
 
 export default function Navigation() {
+
+  const [modalState, setModalState] = useState<{ isVisible: boolean }>({ isVisible: false });
+
+  const handleClose = () => {
+    setModalState({ isVisible: false })
+  }
+
+  const handleOpen = () => {
+    setModalState({ isVisible: true })
+  }
+
+  console.log()
+
   return (
     <Row className='h-full'>
-      <Col span={16} className='flex w-full justify-between items-center px-4 mx-auto'>
+      <Col span={23} md={20} lg={16} className='flex w-full justify-between items-center px-4 mx-auto'>
 
         <Space>
           <img 
@@ -19,16 +34,50 @@ export default function Navigation() {
         </Space>
         
         <Space>
-          {/* // TODO!! Onclick Show Modal */}
-          {/* // TODO!! Onclick Show Modal */}
           <ButtonType
-              buttonClass='text-white bg-kmcOrange border-none px-8 rounded h-8 hover:bg-orange-500 hover:text-white font-proxiSemiBold'
+              buttonClass='text-white bg-kmcOrange border-none px-8 rounded h-8 hover:bg-orange-500 hover:text-white font-proxiSemiBold '
               text='Log in'
               buttonType='primary'
+              handleClick={ handleOpen }
             />
-          {/* // TODO!! Onclick Show Modal */}
-          {/* // TODO!! Onclick Show Modal */}
         </Space>
+
+        <Modal
+          centered
+          visible={ modalState.isVisible }
+          closeIcon='Close'
+          className='loginModal'
+          footer={ null }
+          maskClosable={ true }
+          onCancel={ handleClose }
+          bodyStyle={{ padding: '2.6rem 1.5rem' }}
+        >
+          <h3 className='font-proxiExtraBold text-2xl justify-self-start leading-6'>
+            I'm a returning customer
+          </h3>
+          <p>To continue, please enter your email address and passord</p>
+
+          <form className='loginForm mt-5' onSubmit={ e => e.preventDefault() }>
+            <Space direction="vertical" className='w-full'>
+              <Input placeholder="Email Address" />
+              <Password
+                placeholder="Password"
+                iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+              />
+            </Space>
+            <ButtonType
+              buttonType='primary'
+              buttonClass='w-full mt-5'
+              text='Log in'
+            />
+          </form>
+          <ButtonType
+            buttonType='link'
+            buttonClass='p-0 mt-3'
+            text='Forgot Password?'
+          />
+
+        </Modal>
 
       </Col>
     </Row>
