@@ -6,7 +6,6 @@ import {
   Typography, 
   Card, 
   Carousel,
-  Button
 } from 'antd';
 import { EnvironmentFilled } from '@ant-design/icons';
 import { locations, buildings } from '../assets/data/Location.data'

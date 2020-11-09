@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Button,Carousel } from 'antd';
+import { Row, Col, Carousel } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons'
 import { HeroBGImgStyle, heroImages } from '../assets/data/HeroCarousel.data';
 import { ButtonType } from '../utils/ButtonType';

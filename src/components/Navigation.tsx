@@ -1,5 +1,7 @@
 import React from 'react'
-import { Space, Button, Row, Col } from 'antd';
+import { Space, Row, Col } from 'antd';
+import { ButtonType } from '../utils/ButtonType';
+
 import CompanyLogo from '../assets/images/CompanyLogo.webp'
 
 export default function Navigation() {
@@ -19,11 +21,11 @@ export default function Navigation() {
         <Space>
           {/* // TODO!! Onclick Show Modal */}
           {/* // TODO!! Onclick Show Modal */}
-          <Button
-            className='text-white bg-kmcOrange border-none px-8 rounded h-8 hover:bg-orange-500 hover:text-white'
-            >
-            Login
-          </Button>
+          <ButtonType
+              buttonClass='text-white bg-kmcOrange border-none px-8 rounded h-8 hover:bg-orange-500 hover:text-white font-proxiSemiBold'
+              text='Log in'
+              buttonType='primary'
+            />
           {/* // TODO!! Onclick Show Modal */}
           {/* // TODO!! Onclick Show Modal */}
         </Space>
