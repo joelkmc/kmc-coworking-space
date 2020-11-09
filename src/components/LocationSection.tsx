@@ -11,6 +11,7 @@ import {
 import { EnvironmentFilled } from '@ant-design/icons';
 import { locations, buildings } from '../assets/data/Location.data'
 import { locationsCarouselSettings } from '../utils/CarouselSetting';
+import { ButtonType } from '../utils/ButtonType';
 
 const { Title, Paragraph } = Typography;
 const { Option } = Select;
@@ -86,12 +87,17 @@ export default function LocationSection() {
                       Our first office in Alabang, this facility features large office space with large panoramic window views.
                     </Paragraph>
                     <div className="">
-                      <Button type='link' className='text-kmcOrange hover:text-orange-500 transition-all duration-150 ease-in cursor-pointer p-1'>
-                        Read More
-                      </Button>
+                      <ButtonType 
+                        buttonType='link' 
+                        text='Read More' 
+                        buttonClass='transition-all duration-150 ease-in cursor-pointer p-1' 
+                      />
                     </div>
-
-                    <Button type='primary' className='mt-auto mb-3'>Book Now</Button>
+                    <ButtonType
+                      buttonType='primary'
+                      buttonClass='mt-auto mb-3'
+                      text='Book Now'
+                    />
                   </div>
                 </Card>
               </div>
