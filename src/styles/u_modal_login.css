@@ -1,0 +1,11 @@
+.loginForm .ant-space-item {
+  width: 100%;
+}
+
+.loginModal .ant-modal-close span {
+  font-size: .8rem;
+}
+
+.loginModal .ant-modal-close:focus {
+  outline: none;
+}
