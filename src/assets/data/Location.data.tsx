@@ -13,6 +13,7 @@ import uptownPlace from '../images/uptown-place-tower2.jpg'
 
 export const buildings = [
   {
+    id: 1,
     name: "Cyber Sigma",
     img: cyberSigma,
     address: "20th Floor, Cyber Sigma, Lawton Ave.",
@@ -22,6 +23,7 @@ export const buildings = [
     description: "One of the most comprehensive shared spaces in the entire country. Located in the largest flexible workspace in the Philippines, this coworking area can seat around 20 employees while allowing each coworker to access the numerous features of the facility. Coworking clients can play in the gaming area, snooze at our napping area/sleeping quarters, grab a bite or relax at our expansive pantry, or just get work done at our ergonomic coworking space.",
   },
   {
+    id: 2,
     name: "Four NEO",
     img: fourNeo,
     address: "4th Ave. Four/NEO, Bonifacio Global City",
@@ -31,6 +33,7 @@ export const buildings = [
     description: "Combining upscale, top-class interiors with modern and fully functional amenities, this flexible workspace is the ideal work environment for companies from different industries with both experienced employees and newcomers alike.",
   },
   {
+    id: 3,
     name: "V Corporate Centre",
     img: vcorporate,
     address: "5th floor, V Corporate Centre, 125 L.P. Leviste Street, Salcedo Village",
@@ -40,6 +43,7 @@ export const buildings = [
     description: "Our serviced offices and coworking space in V Corporate Centre feature the most modern office amenities, from biometrics scanners up to our bank-grade data centers. We offer flexible lease terms, allowing you to add seats or move into a private office when you're scaling up. ",
   },
   {
+    id: 4,
     name: "Frabelle Corporate Plaza",
     img: frabelle,
     address: "18th floor, Frabelle Corporate Plaza, 129 Bautista",
@@ -49,6 +53,7 @@ export const buildings = [
     description: "Our serviced offices and coworking space in Frabelle Corporate Plaza feature the most modern office amenities, from biometric scanners up to our bank-grade data centers. We offer flexible lease terms, allowing you to add seats or move into a private office when you're scaling up. ",
   },
   {
+    id: 5,
     name: "One Griffinstone",
     img: oneGriffinstone,
     address: "Filinvest Corp. City, 9th Floor, Commerce Avenue, corner Spectrum Midway, Alabang",
@@ -58,6 +63,7 @@ export const buildings = [
     description: "Our first office in Alabang, this facility features large office space with large panoramic window views.",
   },
   {
+    id: 6,
     name: "Robinsons Cyberscape Gamma",
     img: robinsonCyberspace,
     address: " 15th Floor, Robinsons Cyberscape, Topaz Rd, Ortigas Center",
@@ -68,6 +74,7 @@ export const buildings = [
     description: "Fully-equipped modern amenities in cyberscape Gamma with 24/7 IT support.",
   },
   {
+    id: 7,
     name: "Robinsons Zeta Tower",
     img: robinsonZeta,
     address: "7th Floor, Robinsons Zeta Tower, C5 Road",
@@ -77,6 +84,7 @@ export const buildings = [
     description: "Boasting tropical design elements reminiscent of beach getaways during summer, our Zeta office is ideal for all employees of all ages.",
   },
   {
+    id: 8,
     name: "Rockwell Sheridan 1",
     img: rockwellSheridan,
     address: "10th Floor, South Tower Rockwell Business Center, Sheridan",
@@ -86,6 +94,7 @@ export const buildings = [
     description: "Featuring multiple open huddles video conferencing and interview areas.",
   },
   {
+    id: 9,
     name: "Skyrise 4B",
     img: skyrise4b,
     address: "West Geonzon Street",
@@ -95,6 +104,7 @@ export const buildings = [
     description: "KMC is expanding its portfolio of Private Offices and Coworking Spaces for rent in Cebu with two new Flexible Workspace floors at Skyrise 4B",
   },
   {
+    id: 10,
     name: "Uptown Place Tower 2",
     img: uptownPlace,
     address: "20th floor, Uptown Place Tower 2 11th Dr, Uptown Bonifacio",
@@ -104,6 +114,7 @@ export const buildings = [
     description: "Uptown Place Tower 2 is part of Megaworld's 15.4-hectare township development Uptown Bonifacio, located along 11th Ave.",
   },
   {
+    id: 11,
     name: "SM Aura Office Tower",
     img: smAura,
     address: "11th Floor, SM Aura Business Tower, 26th St., McKinley Parkway",
@@ -113,6 +124,7 @@ export const buildings = [
     description: "The SM Aura Premiere Office Tower is a 29-storey dedicated private office and serviced office building with an area of 40,424 square meters.",
   },
   {
+    id: 12,
     name: "Podium West Tower",
     img: podiumWest,
     address: "26th and 27th Floor, Ortigas Center",
@@ -123,4 +135,13 @@ export const buildings = [
   }
 ]
 
-export const locations = Array.from(new Set(Array.from(buildings, building => building.city)))
+export const locations = [
+  'BGC',
+  'Cebu',
+  'Makati',
+  'Mandaluyong',
+  'Muntinlupa',
+  'Ortigas',
+  'Quezon City'
+]
+

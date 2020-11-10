@@ -1,67 +1,50 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import { 
   Row, 
   Col, 
   Select, 
   Typography, 
-  Card, 
   Carousel,
-  Button
 } from 'antd';
-import { EnvironmentFilled } from '@ant-design/icons';
 import { locations, buildings } from '../assets/data/Location.data'
-import { PrevArrow, NextArrow } from '../utils/Arrows'
+import { locationsCarouselSettings } from '../utils/CarouselSetting';
+import { LocationsCard } from '../utils/LocationsCard';
 
-const { Title, Paragraph } = Typography;
+const { Title } = Typography;
 const { Option } = Select;
 
+const LocationSection: React.FC = () => {
 
-export default function LocationSection() {
+  const [buildingsState, setBuildingsState] = useState<any[]>(buildings);
 
-  const carouselSettings = {
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
+  const handleLocationChange = (value:string) => {
+
+    const filterBuildings:any[] = buildings.filter(building => {
+      if(value === 'BGC') {
+        return building.city === 'Taguig';
       }
-    ]
+      return building.city === value;
+    })
+    
+    setBuildingsState(filterBuildings)
+
   }
+  
+  const carouselItems = buildingsState.map(building => 
+    <LocationsCard 
+      address={ building.address } 
+      city={ building.city }
+      name={ building.name }
+      description={ building.description }
+      state={ building.state }
+      id={ building.id }
+      img={ building.img }
+    />      
+  )
 
   return (
     <Row>
-      <Col 
-        span={23}
-        md={22}
-        xl={16}
-        className='mx-auto mt-10 bg'
-      >
+      <Col span={23} md={22} xl={16} className='mx-auto mt-10 bg'>
 
         {/* Location Input */}
         <div className='flex flex-col sm:flex-row justify-between items-center'>
@@ -73,7 +56,11 @@ export default function LocationSection() {
             Choose your preferred location below:
           </Title>
 
-          <Select placeholder={'Select a location'} style={{ width: 150 }}>
+          <Select 
+            placeholder={'Select a location'} 
+            style={{ width: 150 }}
+            onChange={ handleLocationChange }
+          >
             {
               locations.map(location => {
                 return(
@@ -81,7 +68,7 @@ export default function LocationSection() {
                   key={locations.indexOf(location)} 
                   value={location}
                 >
-                  {location}
+                  { location }
                 </Option>
                 )
               })
@@ -90,54 +77,18 @@ export default function LocationSection() {
         </div>
         
         {/* Location Cards Carousel */}
-        <Carousel {...carouselSettings} arrows={ true } className='locations__carousel pb-10'>
-        
+        <Carousel 
+          {...locationsCarouselSettings} 
+          className='locations__carousel pb-10'
+          
+        >
           {/* Card Items */}
-          {
-            buildings.map(building => (
-              <div className="px-2 mt-6">
-                <Card
-                  bodyStyle={{ 
-                    backgroundColor: 'rgba(0,0,0)', 
-                    padding: '0 10px',
-                    height: '220px'
-                  }}
-                  className='rounded-md overflow-hidden'
-                  bordered={ false }
-                  cover={
-                    <img src={building.img} alt={'frabelle'} style={{ height: '180px' }} className='object-cover' />
-                  }
-                >
-                  <div className="flex flex-col h-full py-2">
-                    <h4 className='font-proxiExtraBold text-kmcOrange text-2xl justify-self-start leading-6'>
-                      { building.name }
-                    </h4>
-                    <h5 className="text-white font-proxiSemiBold text-1xl justify-self-center mt-auto">
-                      <EnvironmentFilled /> Taguig, Metro Manila
-                    </h5>
-                    <Paragraph 
-                      ellipsis={ true } 
-                      className='text-white justify-self-center'
-                      style={{ marginBottom: 0 }}
-                    >
-                      Our first office in Alabang, this facility features large office space with large panoramic window views.
-                    </Paragraph>
-                    <div className="">
-                      <Button type='link' className='text-kmcOrange hover:text-orange-500 transition-all duration-150 ease-in cursor-pointer p-1'>
-                        Read More
-                      </Button>
-                    </div>
-
-                    <Button type='primary' className='mt-auto mb-3'>Book Now</Button>
-                  </div>
-                </Card>
-              </div>
-            ))
-          }
-
+          { carouselItems }
         </Carousel>
-
+        
       </Col>
     </Row>
   )
 }
+
+export default LocationSection;
