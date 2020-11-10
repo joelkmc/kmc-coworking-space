@@ -26,37 +26,34 @@ export const PrevArrow = (props:any) => {
 }
 
 export const locationsCarouselSettings = {
-  nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />,
-  dots: true,
-  infinite: false,
-  speed: 500,
   slidesToShow: 4,
   slidesToScroll: 4,
-  initialSlide: 0,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  infinite: false,
+  arrows:true,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
       }
     },
     {
-      breakpoint: 768,
+      breakpoint: 915,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2
+          slidesToShow: 2,
+          slidesToScroll: 2,
       }
     },
     {
-      breakpoint: 576,
+      breakpoint: 630,
       settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows:false
       }
-    }
+    },
   ]
 }

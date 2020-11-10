@@ -7,29 +7,25 @@ import { ModalComp } from './ModalComp';
 
 
 interface LocationsModalProps {
-  building: {
-    name: string;
-    img: string;
-    address: string;
-    city: string;
-    state: string;
-    country: string;
-    description: string;
-    hidden?: boolean
-  }
+  id: number;
+  name: string;
+  img: string;
+  address: string;
+  city: string;
+  state: string;
+  description: string;
+  hidden?: boolean
 }
 
 const { Paragraph } = Typography;
 
-export const LocationsCard: React.FC<LocationsModalProps> = ({ building }) => {
+export const LocationsCard: React.FC<LocationsModalProps> = ({id,name,img,address,city,state,description,hidden}) => {
   console.log('LocationModal Run')
 
   const [modalState, handleModalClose, handleModalOpen] = useModalState(false)
 
-  const {name,img,address,city,state,country,description,hidden} = building
-
   return (
-    <>
+    <div className="px-2 mt-6" key={ id }>
       <Card
         bodyStyle={{ 
           backgroundColor: 'rgba(0,0,0)', 
@@ -109,6 +105,6 @@ export const LocationsCard: React.FC<LocationsModalProps> = ({ building }) => {
           </>
         }
       />
-    </>
+    </div>
   );
 }
