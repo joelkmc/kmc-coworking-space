@@ -9,3 +9,8 @@
 .loginModal .ant-modal-close:focus {
   outline: none;
 }
+
+.ant-modal-content {
+  border-radius: 5px;
+  overflow: hidden;
+}

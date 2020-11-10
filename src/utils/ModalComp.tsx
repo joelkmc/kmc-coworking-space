@@ -9,9 +9,10 @@ interface ModalCompProps {
   width?: number | string;
   footer?: null | string;
   closeIcon?: boolean;
+  className?: string;
 }
 
-export const ModalComp: React.FC<ModalCompProps> = ({ inlineStyle, childComp, modalState, handleClose, width = 520, footer = null, closeIcon }) => {
+export const ModalComp: React.FC<ModalCompProps> = ({ inlineStyle, childComp, modalState, handleClose, width = 520, footer = null, closeIcon, className }) => {
 
     return (
       <Modal 
@@ -19,7 +20,7 @@ export const ModalComp: React.FC<ModalCompProps> = ({ inlineStyle, childComp, mo
         centered
         visible={ modalState }
         closeIcon={ closeIcon ? '' : 'Close' }
-        className='loginModal'
+        className= {`loginModal px-2 ${className}`}
         footer={ footer }
         maskClosable={ true }
         onCancel={ handleClose }

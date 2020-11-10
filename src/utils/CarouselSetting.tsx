@@ -30,7 +30,8 @@ export const locationsCarouselSettings = {
   slidesToScroll: 4,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
-  infinite: false,
+  initialSlide: 0,
+  adaptiveHeight: true,
   arrows:true,
   responsive: [
     {

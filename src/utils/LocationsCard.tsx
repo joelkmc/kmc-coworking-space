@@ -70,39 +70,40 @@ export const LocationsCard: React.FC<LocationsModalProps> = ({id,name,img,addres
 
       <ModalComp 
         width= '100vw'
-        inlineStyle={{ padding: '0', background: 'black', minHeigt: '70vh' }}
+        className='aswwwwww'
+        inlineStyle={{ padding: '0', background: 'black' }}
         modalState={ modalState }
         handleClose={ handleModalClose }
         closeIcon={ true }
         childComp={
-          <>
-            <figure className='relative text-white'>
-              <div className="relative">
-                <img 
-                  src={ img } 
-                  alt={ img } 
-                  className='object-cover w-full'
-                />
-                <div className="absolute inset-0 bg-black opacity-25 h-full flex flex-col"></div>
-              </div>
-              <figcaption className="absolute bottom-0 px-3">
-                <h4 className='font-proxiExtraBold text-kmcOrange text-2xl justify-self-start leading-6'>
+          <div className='flex flex-col md:flex-row h-full' style={{ minHeight: '60vh' }}>
+            <figure className=' text-white md:w-4/6'>
+              <img 
+                src={ img } 
+                alt={ img } 
+                className='object-cover w-full h-full'
+              />
+              <div className="absolute inset-0 bg-black opacity-25 h-full flex flex-col"></div>
+            </figure>
+            <div 
+              className="flex flex-col text-white pt-5 pb-2 justify-center md:w-2/6"
+            >
+              <div className="w-full flex flex-col h-full justify-around p-5" style={{ maxHeight: '350px' }}>
+                <h4 className='font-proxiExtraBold text-kmcOrange text-2xl leading-6'>
                   { name }
                 </h4>
-                <p className=' my-1 leading-4'>{ `${ address }, ${ city }, ${ state }` }</p>
-              </figcaption>
-            </figure>
-            <div className="flex flex-col text-white">
-              <p className="my-2 px-4">
-                { description }
-              </p>
-              <ButtonType
-                buttonType='primary'
-                buttonClass='my-3 mx-2'
-                text='Book Now'
-              />
+                <p className='leading-5 my-1'>{ `${ address }, ${ city }, ${ state }` }</p>
+                <p className="my-2 leading-5 md:leading-normal">
+                  { description }
+                </p>
+                <ButtonType
+                  buttonType='primary'
+                  buttonClass='my-3 mx-2 lg:w-1/2'
+                  text='Book Now'
+                />
+              </div>
             </div>
-          </>
+          </div>
         }
       />
     </div>
