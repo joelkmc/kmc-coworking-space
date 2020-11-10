@@ -126,8 +126,8 @@ const HeroSection: React.FC = () => {
                 </p>
                 <ul className='list-disc pl-4 mt-3'>
                   {
-                    readMoreData.map(readMoreItem => {
-                      return(<li>{readMoreItem}</li>)
+                    readMoreData.map((readMoreItem, i) => {
+                      return(<li key={ i }>{ readMoreItem }</li>)
                     })
                   }
                 </ul>
