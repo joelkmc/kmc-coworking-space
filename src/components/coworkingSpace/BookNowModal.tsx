@@ -119,7 +119,10 @@ export const BookNowModal: React.FC<BookNowModalProps> = ({
                   <Step title={ form.title } key={ i } />
                 ))}
               </Steps>
-
+              
+              {/* //@ data [ 0 ]  BookingDetails Component  */}
+              {/* //@ data [ 1 ]  BillingDetails Component  */}
+              {/* //@ data [ 2 ]  PaymentDetails Component */} 
               {bookingMultiStepForms[bookingDetailState].component}
 
               <div className="flex w-full flex-grow">

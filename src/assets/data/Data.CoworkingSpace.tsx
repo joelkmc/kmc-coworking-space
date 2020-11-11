@@ -1,3 +1,14 @@
+import hours24 from '../../assets/images/24-hours.webp'
+import calendar from '../../assets/images/calendar.webp'
+import macmaxBlack from '../../assets/images/madmax-balck.webp'
+import meetingRoom from '../../assets/images/meeting-room.webp'
+import neverGoDown from '../../assets/images/nevergodown.webp'
+import printer from '../../assets/images/printer.webp'
+import sale from '../../assets/images/sale.webp'
+import heroImg1 from '../images/heroImg1.webp'
+import heroImg2 from '../images/heroImg3.webp'
+import heroImg3 from '../images/heroImg2.jpg'
+import blackTile2 from '../images/black-tile-2.webp'
 import cyberSigma from '../images/cyber-sigma.jpg'
 import fourNeo from '../images/four-neo.jpg'
 import vcorporate from '../images/vcorp.jpg'
@@ -145,3 +156,89 @@ export const locations = [
   'Quezon City'
 ]
 
+
+
+export const HeroBGImgStyle = {
+  backgroundImage: `url(${blackTile2})`,
+  backgroundSize: '120px '
+}
+
+export const heroImages = [
+  {
+    id: 1, 
+    imgUrl: heroImg1, 
+    officeName: 'Cyber Sigma', 
+    address: '20th Floor, Cyber Sigma, Lawton Ave., Taguig, Metro Manila'
+  },
+  {
+    id: 2, 
+    imgUrl: heroImg2, 
+    officeName: 'Four NEO', 
+    address: '4th Ave. Four/NEO, Bonifacio Global City, Taguig, Metro Manila'
+  },
+  {
+    id: 3, 
+    imgUrl: heroImg3, 
+    officeName: 'Frabelle Corporate Plaza', 
+    address: '18th floor, Frabelle Corporate Plaza, 129 Bautista, Makati, Metro Manila'
+  },
+]
+
+export const featColData1 = [
+  {
+    id: 1,
+    img: neverGoDown,
+    title: 'NEVER GO DOWN NETWORK',
+    paragraph: 'Work without interruption. KMC provides the highest speed internet across each of our coworking spaces.'
+  },
+  {
+    id: 2,
+    img: meetingRoom,
+    title: 'MEETING ROOMS',
+    paragraph: 'Board meeting or last-minute team huddle? We have you covered with conference room., collaboration areas and phone booths at each KMC coworking space.'
+  },
+  {
+    id: 3,
+    img: hours24,
+    title: '24/7 ACCESS',
+    paragraph: 'Work with your preferred location anytime. KMC grants 24/7 coworking access, perfect for early risers and night owls.'
+  },
+  {
+    id: 4,
+    img: calendar,
+    title: 'MONTHLY EVENTS',
+    paragraph: 'KMC members get access to exclusive and complimentary events each month. Our flagship events include our annual Foam Party and the KMC Sunset Collective.'
+  },
+]
+
+export const featColData2 = [
+  {
+    id: 1,
+    img: macmaxBlack,
+    title: 'FREE COFFEE',
+    paragraph: 'Enjoy unlimited complimentary Mad Max Coffee© exclusively brewed by KMC. '
+  },
+  {
+    id: 2,
+    img: printer,
+    title: 'PRINTING & PHOTOCOPY',
+    paragraph: 'No need to go out to print or photocopy your document because we will do it for you!'
+  },
+  {
+    id: 3,
+    img: sale,
+    title: 'PERKS & DISCOUNTS',
+    paragraph: 'Enjoy exclusive discounts from local and international KMC Partners.'
+  },
+]
+
+export const readMoreData = [
+  'Access to all KMC Coworking Locations',
+  '24/7 Unlimited daily access',
+  'Free 2 hours use of meeting rooms/boardrooms per Month',
+  'Exclusive KMC Member discounts (Shopee, Shangri-la Hotels, and more)',
+  'Strong and stable internet connection',
+  'Free Coffee',
+  'Printing & Photocopying',
+  'Access to join KMC Webinars'
+]

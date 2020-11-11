@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
-import { 
-  Row, 
-  Col, 
-  Select, 
-  Typography, 
-  Carousel,
-} from 'antd';
-import { locations, buildings } from '../../assets/data/Location.data'
+import { Row, Col, Select, Typography, Carousel } from 'antd';
+import { locations, buildings } from '../../assets/data/Data.CoworkingSpace'
 import { locationsCarouselSettings } from './CarouselSetting';
 import { LocationsCard } from './LocationsCard';
 
@@ -15,8 +9,11 @@ const { Option } = Select;
 
 const LocationSection: React.FC = () => {
 
+  // Buildings Array State and Method
   const [buildingsState, setBuildingsState] = useState<any[]>(buildings);
 
+  //@ handleLocationChange filters the card items
+  //  filter buildings based on selected locations
   const handleLocationChange = (value:string) => {
 
     const filterBuildings:any[] = buildings.filter(building => {
@@ -30,7 +27,9 @@ const LocationSection: React.FC = () => {
 
   }
   
-  const carouselItems = buildingsState.map(building => 
+  //@ carouselCards ( default = buildingsState )
+  //  returns a array of cards based on selected location
+  const carouselCards = buildingsState.map(building => 
     <LocationsCard 
       address={ building.address } 
       city={ building.city }
@@ -84,7 +83,7 @@ const LocationSection: React.FC = () => {
           
         >
           {/* Card Items */}
-          { carouselItems }
+          { carouselCards }
         </Carousel>
         
       </Col>

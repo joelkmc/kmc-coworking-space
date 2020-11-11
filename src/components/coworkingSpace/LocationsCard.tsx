@@ -6,8 +6,9 @@ import { ButtonType } from '../../utils/ButtonType'
 import { ModalComp } from '../../utils/ModalComp';
 import { BookNowModal } from './BookNowModal';
 
+const { Paragraph } = Typography;
 
-interface LocationsModalProps {
+interface LocationsCardProps {
   id: number;
   name: string;
   img: string;
@@ -18,12 +19,12 @@ interface LocationsModalProps {
   hidden?: boolean
 }
 
-const { Paragraph } = Typography;
+export const LocationsCard: React.FC<LocationsCardProps> = ({id,name,img,address,city,state,description,hidden}) => {
 
-export const LocationsCard: React.FC<LocationsModalProps> = ({id,name,img,address,city,state,description,hidden}) => {
-
+  // Read More State and Methods
   const [readMoreState, handleReadMoreClose, handleReadMoreOpen] = useModalState(false)
   
+  // Book Now State and Methods
   const [bookingModalState, handleBookingClose, handleBookingOpen] = useModalState(false)
 
   return (
@@ -111,7 +112,7 @@ export const LocationsCard: React.FC<LocationsModalProps> = ({id,name,img,addres
         }
       />
 
-      {/* Book Now Modal */}
+      {/* Book Now Modal Component */}
       <BookNowModal
         bookingModalState = { bookingModalState }
         handleBookingFormClose = { handleBookingClose }

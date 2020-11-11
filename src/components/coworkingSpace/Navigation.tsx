@@ -11,7 +11,8 @@ const { Password } = Input
 
 const Navigation = () => {
 
-  const [ modalState, handleClose, handleOpen ] = useModalState(false);
+  // Login Modal State and Method
+  const [ loginModalState, handleLoginModalClose, handleLoginModalOpen ] = useModalState(false);
 
   return (
     <Row className='h-full'>
@@ -31,7 +32,7 @@ const Navigation = () => {
             buttonClass='text-white bg-kmcOrange border-none px-8 rounded h-8 hover:bg-orange-500 hover:text-white font-proxiSemiBold '
             text='Log in'
             buttonType='primary'
-            handleClick={ handleOpen }
+            handleClick={ handleLoginModalOpen }
           />
 
         </Space>
@@ -40,8 +41,8 @@ const Navigation = () => {
       
       {/* Login Modal */}
       <ModalComp
-        modalState={ modalState }
-        handleClose= { handleClose }
+        modalState={ loginModalState }
+        handleClose= { handleLoginModalClose }
         childComp={
           <>
             <h3 className='font-proxiExtraBold text-2xl justify-self-start leading-6'>

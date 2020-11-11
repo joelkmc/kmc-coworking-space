@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Input, Select, DatePicker, InputNumber } from 'antd';
-import { buildings } from '../../assets/data/Location.data'
+import { buildings } from '../../assets/data/Data.CoworkingSpace'
 import { ButtonType } from '../../utils/ButtonType';
 
 export const BookingDetails: React.FC = () => {
@@ -58,14 +58,20 @@ export const BookingDetails: React.FC = () => {
 
 export const BillingDetails: React.FC = () => {
 
+  //@ handleTermsClicked
+  //  opens a new tab on 'Terms of Use' link is Clicked
   const handleTermsClicked = () => {
     window.open('https://cdn2.hubspot.net/hubfs/2867266/KMC%20Hub/Terms%20Of%20Use.pdf');
   }
   
+  //@ handleDataPolicyClicked
+  //  opens a new tab on 'Data Policy' link is Clicked
   const handleDataPolicyClicked = () => {
     window.open('https://kmc.solutions/privacy-policy');
   }
   
+  //@ handleCookieClicked
+  //  opens a new tab on 'Cookie' link is Clicked
   const handleCookieClicked = () => {
     window.open('https://kmc.solutions/privacy-policy');
   }

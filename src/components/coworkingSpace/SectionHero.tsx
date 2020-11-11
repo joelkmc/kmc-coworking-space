@@ -2,18 +2,19 @@ import React from 'react'
 import useModalState from '../../hooks/useModalState';
 import { Row, Col, Carousel } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons'
-import { HeroBGImgStyle, heroImages } from '../../assets/data/HeroCarousel.data';
+import { HeroBGImgStyle, heroImages, readMoreData } from '../../assets/data/Data.CoworkingSpace';
 import { ButtonType } from '../../utils/ButtonType';
 import { ModalComp } from '../../utils/ModalComp';
 import { BookNowModal } from './BookNowModal';
 
 import coworkingOrtigas from '../../assets/images/coworking-ortigas.webp'
-import { readMoreData } from '../../assets/data/ReadMore.data'
 
 const HeroSection: React.FC = () => {
 
+  // Read More Button Modal State and Methods
   const [ readMoreModalState, handleReadMoreClose, handleReadMoreOpen ] = useModalState(false);
 
+  // Book Now Button Modal State and Methods
   const [ bookingModalState, handleBookingFormClose, handleBookingFormOpen ] = useModalState(false)
   
   return (
@@ -142,6 +143,7 @@ const HeroSection: React.FC = () => {
         }
       />
 
+      {/* Book Now Modal Component */}
       <BookNowModal
         bookingModalState = { bookingModalState }
         handleBookingFormClose = { handleBookingFormClose }
