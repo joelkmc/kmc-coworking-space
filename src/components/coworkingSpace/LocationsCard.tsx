@@ -1,9 +1,10 @@
 import React from 'react'
-import useModalState from '../hooks/useModalState';
-import { Modal, Card, Typography } from 'antd'
+import useModalState from '../../hooks/useModalState';
+import { Card, Typography } from 'antd'
 import { EnvironmentFilled } from '@ant-design/icons'
-import { ButtonType } from './ButtonType'
-import { ModalComp } from './ModalComp';
+import { ButtonType } from '../../utils/ButtonType'
+import { ModalComp } from '../../utils/ModalComp';
+import { BookNowModal } from './BookNowModal';
 
 
 interface LocationsModalProps {
@@ -20,9 +21,10 @@ interface LocationsModalProps {
 const { Paragraph } = Typography;
 
 export const LocationsCard: React.FC<LocationsModalProps> = ({id,name,img,address,city,state,description,hidden}) => {
-  console.log('LocationModal Run')
 
-  const [modalState, handleModalClose, handleModalOpen] = useModalState(false)
+  const [readMoreState, handleReadMoreClose, handleReadMoreOpen] = useModalState(false)
+  
+  const [bookingModalState, handleBookingClose, handleBookingOpen] = useModalState(false)
 
   return (
     <div className="px-2 mt-6" key={ id }>
@@ -57,23 +59,25 @@ export const LocationsCard: React.FC<LocationsModalProps> = ({id,name,img,addres
               buttonType='link' 
               text='Read More' 
               buttonClass='transition-all duration-150 ease-in cursor-pointer p-1' 
-              handleClick={ handleModalOpen }
+              handleClick={ handleReadMoreOpen }
             />
           </div>
           <ButtonType
             buttonType='primary'
             buttonClass='mt-auto mb-3'
             text='Book Now'
+            handleClick={ handleBookingOpen }
           />
         </div>
       </Card>
 
+      {/* Read More Modal */}
       <ModalComp 
         width= '100vw'
         className='aswwwwww'
         inlineStyle={{ padding: '0', background: 'black' }}
-        modalState={ modalState }
-        handleClose={ handleModalClose }
+        modalState={ readMoreState }
+        handleClose={ handleReadMoreClose }
         closeIcon={ true }
         childComp={
           <div className='flex flex-col md:flex-row h-full' style={{ minHeight: '60vh' }}>
@@ -105,6 +109,12 @@ export const LocationsCard: React.FC<LocationsModalProps> = ({id,name,img,addres
             </div>
           </div>
         }
+      />
+
+      {/* Book Now Modal */}
+      <BookNowModal
+        bookingModalState = { bookingModalState }
+        handleBookingFormClose = { handleBookingClose }
       />
     </div>
   );

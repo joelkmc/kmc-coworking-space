@@ -1,15 +1,15 @@
 import React from 'react'
-import { Space, Row, Col, Input, Modal } from 'antd';
+import { Space, Row, Col, Input } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
-import { ButtonType } from '../utils/ButtonType';
-import useModalState from '../hooks/useModalState';
-import { ModalComp } from '../utils/ModalComp'
+import { ButtonType } from '../../utils/ButtonType';
+import useModalState from '../../hooks/useModalState';
+import { ModalComp } from '../../utils/ModalComp'
 
-import CompanyLogo from '../assets/images/CompanyLogo.webp'
+import CompanyLogo from '../../assets/images/CompanyLogo.webp'
 
 const { Password } = Input
 
-export default function Navigation() {
+const Navigation = () => {
 
   const [ modalState, handleClose, handleOpen ] = useModalState(false);
 
@@ -88,3 +88,5 @@ export default function Navigation() {
     </Row>
   )
 }
+
+export default Navigation;

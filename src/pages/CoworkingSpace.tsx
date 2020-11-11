@@ -1,10 +1,10 @@
 import React from 'react'
 import { Layout } from 'antd';
 
-import Navigation from '../components/Navigation';
-import HeroSection from '../components/HeroSection';
-import FeatureSection from '../components/FeatureSection';
-import LocationSection from '../components/LocationSection';
+import Navigation from '../components/coworkingSpace/Navigation';
+import HeroSection from '../components/coworkingSpace/SectionHero';
+import FeatureSection from '../components/coworkingSpace/SectionFeature';
+import LocationSection from '../components/coworkingSpace/SectionLocationsSelect';
 
 const { Header, Content } = Layout;
 

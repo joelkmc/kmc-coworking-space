@@ -1,13 +1,13 @@
 import React from 'react'
 import { Row, Col, Typography } from 'antd';
 
-import hours24 from '../assets/images/24-hours.webp'
-import calendar from '../assets/images/calendar.webp'
-import macmaxBlack from '../assets/images/madmax-balck.webp'
-import meetingRoom from '../assets/images/meeting-room.webp'
-import neverGoDown from '../assets/images/nevergodown.webp'
-import printer from '../assets/images/printer.webp'
-import sale from '../assets/images/sale.webp'
+import hours24 from '../../assets/images/24-hours.webp'
+import calendar from '../../assets/images/calendar.webp'
+import macmaxBlack from '../../assets/images/madmax-balck.webp'
+import meetingRoom from '../../assets/images/meeting-room.webp'
+import neverGoDown from '../../assets/images/nevergodown.webp'
+import printer from '../../assets/images/printer.webp'
+import sale from '../../assets/images/sale.webp'
 
 const { Title, Paragraph } = Typography;
 

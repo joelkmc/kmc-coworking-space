@@ -1,22 +1,21 @@
 import React from 'react'
-import { Row, Col, Carousel, Space } from 'antd';
+import useModalState from '../../hooks/useModalState';
+import { Row, Col, Carousel } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons'
-import { HeroBGImgStyle, heroImages } from '../assets/data/HeroCarousel.data';
-import { ButtonType } from '../utils/ButtonType';
-import { ModalComp } from '../utils/ModalComp';
-import useModalState from '../hooks/useModalState';
+import { HeroBGImgStyle, heroImages } from '../../assets/data/HeroCarousel.data';
+import { ButtonType } from '../../utils/ButtonType';
+import { ModalComp } from '../../utils/ModalComp';
+import { BookNowModal } from './BookNowModal';
 
-import coworkingOrtigas from '../assets/images/coworking-ortigas.webp'
-import { readMoreData } from '../assets/data/ReadMore.data'
+import coworkingOrtigas from '../../assets/images/coworking-ortigas.webp'
+import { readMoreData } from '../../assets/data/ReadMore.data'
 
 const HeroSection: React.FC = () => {
 
   const [ readMoreModalState, handleReadMoreClose, handleReadMoreOpen ] = useModalState(false);
 
-  const [ bookNowModalState, handleBookNowClose, handleBookNowOpen ] = useModalState(false);
-
-  const [ noticeModalState, handleNoticeClose, handleNoticeOpen ] = useModalState(false);
-
+  const [ bookingModalState, handleBookingFormClose, handleBookingFormOpen ] = useModalState(false)
+  
   return (
     <Row className='items-center flex-col md:flex-row overflow-hidden'>
 
@@ -55,14 +54,14 @@ const HeroSection: React.FC = () => {
               buttonClass='my-1 px-8 h-8 sm:w-1/2 sm:mr-2 md:ml-0 font-proxiSemiBold text-white border-kmcOrange'
               text='Book Now'
               buttonType='primary'
-              handleClick={ handleNoticeOpen }
+              handleClick={ handleBookingFormOpen }
             />
           </div>
         </div>
       </Col>
 
       {/* Hero Section Carousel */}
-      <Col span={24} md={12} lg={14} className='h-full' >
+      <Col span={24} md={12} lg={14} className='h-full w-full' >
         <Carousel autoplay autoplaySpeed={4000}>
           {
             heroImages.map(image => (
@@ -136,72 +135,17 @@ const HeroSection: React.FC = () => {
                 buttonClass='mt-4'
                 buttonType='primary'
                 text='Book Now'
-                handleClick={ handleBookNowOpen }
-              />
-            </div>
-          </>
-        }
-      ></ModalComp>
-      
-      {/* Notice Modal */}
-      <ModalComp
-        handleClose={ handleNoticeClose }
-        modalState={ noticeModalState }
-        childComp={
-          <>
-            <div className="flex flex-col">
-              <h3 className='font-proxiExtraBold text-2xl justify-self-start leading-6 text-center'>
-                Important Notice
-              </h3>
-              <Space direction='vertical' >
-                <p className='mt-5 mb-2'>
-                  In order to minimize cross-community infection during the pandemic, the inter-building access feature of KMC's hot desk service will be temporarily limited to only <strong>ONE site of your choice.</strong> For concerns regarding this, please email <strong>hub@kmc.solutions</strong>.
-                </p>
-                <p className='my-2'>
-                  Please be informed as well that the following KMC Workspace locations require a special arrangements prior to usage:
-                </p>
-                <p className="mt-2 bt-1">
-                  <strong>V Corporate Center</strong> (Requires pre-listing of members 3-working days prior)
-                </p>
-                <p className="mt-2 bt-1">
-                  <strong>Uptown Tower 2</strong> (Requires pre-listing of members 3-working days prior)
-                </p>
-                <p className="mt-2 bt-1">
-                  <strong>SM Aura</strong> (Requires pre-listing of members 3-working days prior)
-                </p>
-                <p className="mt-2 bt-1">
-                  <strong>ORE Central, BGC</strong> (Not Available for Coworking)
-                </p>
-                <p className="mt-2 bt-1">
-                  <strong>Unionbank Tower, Ortigas</strong> (Not Available for Coworking)
-                </p>
-              </Space>
-              <ButtonType 
-                buttonClass='mt-4'
-                buttonType='primary'
-                text='Get Started'
-                handleClick={ handleBookNowOpen }
+                handleClick={ handleBookingFormOpen }
               />
             </div>
           </>
         }
       />
 
-      {/* Book Now Modal */}
-      {/* <ModalComp
-        handleClose={ handleBookNowClose }
-        modalState={ bookNowModalState }
-        childComp={
-          <>
-            <div className="flex flex-col">
-              <h3 className='font-proxiExtraBold text-2xl justify-self-start leading-6 text-center'>
-                Breadcrumb
-              </h3>
-            </div>
-          </>
-        }
-      /> */}
-
+      <BookNowModal
+        bookingModalState = { bookingModalState }
+        handleBookingFormClose = { handleBookingFormClose }
+      />
     </Row>
   )
 }

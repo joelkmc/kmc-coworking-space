@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
 import { 
   Row, 
   Col, 
@@ -6,9 +6,9 @@ import {
   Typography, 
   Carousel,
 } from 'antd';
-import { locations, buildings } from '../assets/data/Location.data'
-import { locationsCarouselSettings } from '../utils/CarouselSetting';
-import { LocationsCard } from '../utils/LocationsCard';
+import { locations, buildings } from '../../assets/data/Location.data'
+import { locationsCarouselSettings } from './CarouselSetting';
+import { LocationsCard } from './LocationsCard';
 
 const { Title } = Typography;
 const { Option } = Select;
@@ -38,6 +38,7 @@ const LocationSection: React.FC = () => {
       description={ building.description }
       state={ building.state }
       id={ building.id }
+      key={ building.id }
       img={ building.img }
     />      
   )
