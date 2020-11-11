@@ -1,5 +1,5 @@
 import React from 'react'
-import { Space, Row, Col, Input } from 'antd';
+import { Space, Row, Col, Input, Form } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
 import { ButtonType } from '../../utils/ButtonType';
 import useModalState from '../../hooks/useModalState';
@@ -50,31 +50,34 @@ const Navigation = () => {
             </h3>
             <p>To continue, please enter your email address and passord</p>
 
-            <form className='loginForm mt-5' onSubmit={ e => e.preventDefault() }>
-              <Space direction="vertical" className='w-full'>
-                {/* Email */}
+            <Form className='loginForm mt-5'>
+              {/* Email */}
+              <Form.Item>
+                <label htmlFor="email" className='font-proxiSemiBold'>Email:</label>
                 <Input 
                   placeholder="Email Address" 
                   type='email'
                   name='email'
                 />
-
+              </Form.Item>
+              <Form.Item>
                 {/* Password */}
+                <label htmlFor="email" className='font-proxiSemiBold'>Password:</label>
                 <Password
                   placeholder="Password"
                   name='password'
                   type='password'
                   iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                 />
-              </Space>
+              </Form.Item>
 
               {/* Login Button */}
               <ButtonType
                 buttonType='primary'
-                buttonClass='w-full mt-5'
+                buttonClass='w-full mt-3'
                 text='Log in'
               />
-            </form>
+            </Form>
 
             {/* forgot password link */}
             <ButtonType
