@@ -1,0 +1,69 @@
+/***********************/
+/* Carousel Helper Styles */
+/***********************/
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next,
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-next:hover {
+  font-size: inherit;
+  color: currentColor;
+}
+
+.ant-carousel .locations__carousel .slick-dots li button {
+  background: #f99d3a;
+  opacity: 0.4;
+}
+
+.ant-carousel .locations__carousel .slick-dots li.slick-active button {
+  opacity: 1;
+  background: #f99d3a;
+}
+
+@media only screen and (min-width: 320px) {
+  .ant-carousel .slick-prev,
+  .ant-carousel .slick-next {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .ant-carousel .slick-prev,
+  .ant-carousel .slick-next {
+    display: block;
+  }
+}
+
+/***********************/
+/* Modal Helper Styles */
+/***********************/
+.loginForm .ant-space-item {
+  width: 100%;
+}
+
+.loginModal .ant-modal-close span {
+  font-size: .8rem;
+}
+
+.loginModal .ant-modal-close:focus {
+  outline: none;
+}
+
+.ant-modal-content {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/***********************/
+/* Links Helper Styles */
+/***********************/
+.ant-menu-item a.default__sider-link {
+  color: #fff;
+}
+
+.ant-menu-item a.default__sider-link:hover {
+  color: #f99d3a;
+}
+
+.ant-menu-item-selected a.default__sider-link {
+  color: #f99d3a;
+}

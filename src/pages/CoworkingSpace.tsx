@@ -1,10 +1,10 @@
 import React from 'react'
-import { Layout } from 'antd';
+import { Layout, Row, Col } from 'antd';
 
 import Navigation from '../components/coworkingSpace/Navigation';
 import HeroSection from '../components/coworkingSpace/SectionHero';
 import FeatureSection from '../components/coworkingSpace/SectionFeature';
-import LocationSection from '../components/coworkingSpace/SectionLocationsSelect';
+import LocationSection from '../components/SectionLocationsSelect';
 
 const { Header, Content } = Layout;
 
@@ -31,8 +31,11 @@ export default function CoworkingSpace() {
         <FeatureSection />
         
         {/* Locations Section */}
-        <LocationSection />
-
+        <Row>
+          <Col span={23} md={22} xl={16} className='mx-auto bg'>
+            <LocationSection />
+          </Col>
+        </Row>
       </Content>
     
     </Layout>

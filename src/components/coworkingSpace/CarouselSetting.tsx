@@ -32,6 +32,7 @@ export const locationsCarouselSettings = {
   prevArrow: <PrevArrow />,
   initialSlide: 0,
   adaptiveHeight: true,
+  infinite: false,
   arrows:true,
   responsive: [
     {

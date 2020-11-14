@@ -1,9 +1,9 @@
 import React from 'react'
-import useModalState from '../../hooks/useModalState';
+import useModalState from '../hooks/useModalState';
 import { Card, Typography } from 'antd'
 import { EnvironmentFilled } from '@ant-design/icons'
-import { ButtonType } from '../../utils/ButtonType'
-import { ModalComp } from '../../utils/ModalComp';
+import { ButtonType } from '../utils/ButtonType'
+import { ModalComp } from '../utils/ModalComp';
 import { BookNowModal } from './BookNowModal';
 
 const { Paragraph } = Typography;

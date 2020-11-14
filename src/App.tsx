@@ -1,17 +1,24 @@
 import React from 'react';
-
-import CoworkingSpace from './pages/CoworkingSpace'
+import Booking from './pages/Booking';
+import Dashboard from './pages/Dashboard';
+import CoworkingSpace from './pages/CoworkingSpace';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 import './styles/app.less';
 import './styles/main.css';
-import './styles/u_location_arrow_dots.css';
-import './styles/u_modal_login.css';
+import './styles/helper.css';
 
 function App() {
   return (
-    <div className='App'>
-      <CoworkingSpace />
-    </div>
+    <Router>
+      <Switch>
+        <div className='App'>
+          <Route exact path='/hub' component={ Dashboard } />
+          <Route path='/hub/bookings' component={ Booking } />
+          <Route path='/hub/s/coworking-space' component={ CoworkingSpace } />
+        </div>
+      </Switch>
+    </Router>
   );
 }
 
