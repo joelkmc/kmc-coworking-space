@@ -2,9 +2,11 @@ import React from 'react'
 import HubLayout from '../components/HubLayout';
 import useModalState from '../hooks/useModalState';
 import SectionLocationsSelect from '../components/SectionLocationsSelect'
+import { Link } from 'react-router-dom'
 import { Card, Divider } from 'antd';
 import { ReadMoreModal } from '../components/ReadMoreModal'
 import { BookNowModal } from '../components/BookNowModal'
+import { NotificationComp } from '../components/Notification';
 
 import kmcBanner from '../assets/images/kmc-coworking-passport-banner.jpg'
 import { StarFilled } from '@ant-design/icons'
@@ -20,6 +22,15 @@ const Dashboard: React.FC = () => {
 
   return (
     <HubLayout navKey={'1'}>
+      <NotificationComp type='danger'>
+        <p className='text-xl font-proxiExtraBold'>COVID-19 Advisory</p>
+        <p>We highly encourage all community members to read the new guidelines prior to returning to our workspaces. Follow this link to view the guidelines: <Link to='/covid-advisory' target='_blank' className='text-black'>https://bit.ly/2Zn5YkG</Link></p>
+      </NotificationComp>
+      <NotificationComp type='danger'>
+        <p className='text-xl font-proxiExtraBold'>Please confirm your email.</p>
+        <p>If it doesn't appear in your Inbox folder, kindly check it under SPAM or Junk Folder.</p>
+      </NotificationComp>
+
       <figure className='rounded overflow-hidden'>
         <img src={ kmcBanner } alt={ kmcBanner } className='w-full h-auto' />
       </figure>
@@ -56,7 +67,7 @@ const Dashboard: React.FC = () => {
         <Divider />
       </Card>
 
-      {/* Locations Select Section */}
+      {/* Locations Select Section */}yar
       <SectionLocationsSelect hubPage={ true } />
 
       {/* Read More Modal */}

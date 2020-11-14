@@ -16,6 +16,10 @@ function App() {
           <Route exact path='/hub' component={ Dashboard } />
           <Route path='/hub/bookings' component={ Booking } />
           <Route path='/hub/s/coworking-space' component={ CoworkingSpace } />
+          <Route path='/covid-advisory' component={() => { 
+            window.open('https://bit.ly/2Zn5YkG'); 
+            return null;
+          }}/>
         </div>
       </Switch>
     </Router>

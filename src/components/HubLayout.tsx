@@ -30,7 +30,7 @@ const HubLayout: React.FC<HubLayoutProps> = ({ children, navKey }) => {
   
 
   return (
-    <Layout style={{ background: '#F5F1F1' }}>
+    <Layout>
 
       {/* Side Navigation */}
       <Sider
@@ -107,7 +107,7 @@ const HubLayout: React.FC<HubLayoutProps> = ({ children, navKey }) => {
       />
     </Menu>
 
-      <Layout>
+      <Layout style={{ background: '#F5F1F1' }} className='min-h-screen'>
 
         {/* Header Navigation */}
         <Menu className='bg-white flex justify-end items-center px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 fixed w-full z-20' style={{ height: '60px' }}>
@@ -123,7 +123,7 @@ const HubLayout: React.FC<HubLayoutProps> = ({ children, navKey }) => {
         </Menu>
 
         {/* Main Content */}
-        <Content className='antdSm:ml-20 antdLg:ml-56' style={{ marginTop: '60px' }}>
+        <Content className='antdSm:ml-20 antdLg:ml-56 min' style={{ marginTop: '60px' }}>
           <Row>
             <Col span={23} md={22} lg={20} className='mx-auto py-10'>
               { children }
