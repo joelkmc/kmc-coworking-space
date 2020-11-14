@@ -2,7 +2,6 @@ import React from 'react'
 import { ModalComp } from '../utils/ModalComp'
 import { readMoreData } from '../assets/data/Data.CoworkingSpace';
 import { ButtonType } from '../utils/ButtonType'
-import useModalState from '../hooks/useModalState'
 
 import coworkingOrtigas from '../assets/images/coworking-ortigas.webp'
 

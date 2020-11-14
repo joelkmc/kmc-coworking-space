@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Select, Typography, Carousel } from 'antd';
+import { Select, Carousel } from 'antd';
 import { locations, buildings } from '../assets/data/Data.CoworkingSpace'
-import { locationsCarouselSettings } from './coworkingSpace/CarouselSetting';
+import { locationsCarouselSettings } from '../utils/CarouselSetting';
 import { LocationsCard } from './LocationsCard';
 
 const { Option } = Select;
@@ -11,6 +11,7 @@ interface LocationSectionProps {
 }
 
 const LocationSection: React.FC<LocationSectionProps> = ({hubPage = false}) => {
+  console.log('section location')
 
   // Buildings Array State and Method
   const [buildingsState, setBuildingsState] = useState<any[]>(buildings);

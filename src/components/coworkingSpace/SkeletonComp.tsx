@@ -1,6 +1,6 @@
 import React from 'react'
 import { Skeleton, Card, Carousel, Col, Space } from 'antd'
-import { locationsCarouselSettings } from './CarouselSetting';
+import { locationsCarouselSettings } from '../../utils/CarouselSetting';
 
 interface SkeletonCompProps {
   loading?: boolean;

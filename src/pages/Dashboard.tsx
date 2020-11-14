@@ -1,7 +1,7 @@
 import React from 'react'
 import HubLayout from '../components/HubLayout';
 import useModalState from '../hooks/useModalState';
-import { Card, Divider, Space } from 'antd';
+import { Card, Divider } from 'antd';
 import { ReadMoreModal } from '../components/ReadMoreModal'
 import { BookNowModal } from '../components/BookNowModal'
 import SectionLocationsSelect from '../components/SectionLocationsSelect'

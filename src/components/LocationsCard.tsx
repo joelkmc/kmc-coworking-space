@@ -21,6 +21,7 @@ interface LocationsCardProps {
 
 export const LocationsCard: React.FC<LocationsCardProps> = ({id,name,img,address,city,state,description,hidden}) => {
 
+  console.log('Location card redered')
   // Read More State and Methods
   const [readMoreState, handleReadMoreClose, handleReadMoreOpen] = useModalState(false)
   
