@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ModalComp } from '../utils/ModalComp';
 import { Space, Steps } from 'antd';
 import { ButtonType } from '../utils/ButtonType';
-import { BillingDetails, BookingDetails, PaymentDetails } from './coworkingSpace/Form.BookingMultiStep'
+import { BillingDetails, BookingDetails, PaymentDetails } from './Form.BookingMultiStep'
 
 const { Step } = Steps
 

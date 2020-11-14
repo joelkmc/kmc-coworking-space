@@ -1,10 +1,10 @@
 import React from 'react'
 import HubLayout from '../components/HubLayout';
 import useModalState from '../hooks/useModalState';
+import SectionLocationsSelect from '../components/SectionLocationsSelect'
 import { Card, Divider } from 'antd';
 import { ReadMoreModal } from '../components/ReadMoreModal'
 import { BookNowModal } from '../components/BookNowModal'
-import SectionLocationsSelect from '../components/SectionLocationsSelect'
 
 import kmcBanner from '../assets/images/kmc-coworking-passport-banner.jpg'
 import { StarFilled } from '@ant-design/icons'
