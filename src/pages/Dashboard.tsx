@@ -2,7 +2,6 @@ import React from 'react'
 import HubLayout from '../components/HubLayout';
 import useModalState from '../hooks/useModalState';
 import SectionLocationsSelect from '../components/SectionLocationsSelect'
-import { Link } from 'react-router-dom'
 import { Card, Divider } from 'antd';
 import { ReadMoreModal } from '../components/ReadMoreModal'
 import { BookNowModal } from '../components/BookNowModal'
@@ -67,7 +66,7 @@ const Dashboard: React.FC = () => {
         <Divider />
       </Card>
 
-      {/* Locations Select Section */}yar
+      {/* Locations Select Section */}
       <SectionLocationsSelect hubPage={ true } />
 
       {/* Read More Modal */}

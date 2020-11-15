@@ -1,9 +1,6 @@
 import React from 'react'
-import useModalState from '../hooks/useModalState';
 import HubLayout from '../components/HubLayout';
-import { Card, Form, Input, Avatar } from 'antd'
-import { UserOutlined } from '@ant-design/icons'
-import { ButtonType } from '../utils/ButtonType';
+import { Card, Form, Input } from 'antd'
 import { ProfilePhotoModal } from '../components/profile/ProfilePhotoModal';
 
 const ProfileEdit: React.FC = () => {

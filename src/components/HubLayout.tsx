@@ -1,8 +1,8 @@
 import React from 'react'
-import { Layout, Col, Row, Space, Dropdown, Avatar, Menu } from 'antd'
+import { Layout, Col, Row, Menu } from 'antd'
 import { Link } from 'react-router-dom'
 
-import { UserOutlined, DownOutlined, CalendarOutlined, AppstoreOutlined, SoundOutlined } from '@ant-design/icons';
+import { CalendarOutlined, AppstoreOutlined, SoundOutlined } from '@ant-design/icons';
 
 import passportIcon from '../assets/images/passport-pin.svg';
 import passportLogo from '../assets/images/passport-logo.svg';
@@ -15,19 +15,6 @@ interface HubLayoutProps {
 }
 
 const HubLayout: React.FC<HubLayoutProps> = ({ children, navKey }) => {
-
-  const profileMenu = () => {
-    return(
-      <Menu mode="inline">
-        <Menu.Item className='px-10' >
-          <Link to='/hub/account/profile'>Profile</Link>
-        </Menu.Item>
-        <Menu.Item className='px-10'>
-          Logout
-        </Menu.Item>
-      </Menu>
-    )
-  }
   
 
   return (
