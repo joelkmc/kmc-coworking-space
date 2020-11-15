@@ -242,3 +242,41 @@ export const readMoreData = [
   'Printing & Photocopying',
   'Access to join KMC Webinars'
 ]
+
+export const bookingData = [
+  {
+    id: '1',
+    plan: 'Coworking Space - Hot Desk',
+    bookingNum: 'KMC-1EB3',
+    bookingDate: '5/20/2021',
+    paymentMade: 5000,
+    paymentRemaining: 3000,
+    status: 'Pending',
+    dateFrom: '5/20/2021',
+    dateTo: '5/20/2022',
+    termsInMonths: 12,
+    seatQuantity: 2,
+    totalDue: 8000,
+    seatOwner: {
+      firstName: 'Sample',
+      lastName: 'Sample',
+      email: 'sample@email.com',
+      contactNum: '0999123456',
+      position: 'samplePos'
+    }
+  },
+  {
+    id: '2',
+    plan: 'Coworking Space - Hot Desk',
+    bookingNum: 'KMC-1EB3',
+    bookingDate: '5/20/2021',
+    paymentMade: 12000,
+    paymentRemaining: 30000,
+    status: 'Pending',
+    dateFrom: '5/20/2021',
+    dateTo: '7/20/2022',
+    termsInMonths: 2,
+    seatQuantity: 8,
+    totalDue: 8000
+  },
+]

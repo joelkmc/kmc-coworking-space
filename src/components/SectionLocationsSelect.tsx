@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Select, Carousel } from 'antd';
-import { locations, buildings } from '../assets/data/Data.CoworkingSpace'
+import { locations, buildings } from '../assets/data/DataHub'
 import { locationsCarouselSettings } from '../utils/CarouselSetting';
 import { LocationsCard } from './LocationsCard';
 

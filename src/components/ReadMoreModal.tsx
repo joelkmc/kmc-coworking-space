@@ -1,6 +1,6 @@
 import React from 'react'
 import { ModalComp } from '../utils/ModalComp'
-import { readMoreData } from '../assets/data/Data.CoworkingSpace';
+import { readMoreData } from '../assets/data/DataHub';
 import { ButtonType } from '../utils/ButtonType'
 
 import coworkingOrtigas from '../assets/images/coworking-ortigas.webp'

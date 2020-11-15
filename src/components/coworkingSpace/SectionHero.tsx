@@ -2,7 +2,7 @@ import React from 'react'
 import useModalState from '../../hooks/useModalState';
 import { Row, Col, Carousel } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons'
-import { HeroBGImgStyle, heroImages } from '../../assets/data/Data.CoworkingSpace';
+import { HeroBGImgStyle, heroImages } from '../../assets/data/DataHub';
 import { ButtonType } from '../../utils/ButtonType';
 import { ReadMoreModal } from '../ReadMoreModal';
 import { BookNowModal } from '../BookNowModal';

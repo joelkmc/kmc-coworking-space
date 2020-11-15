@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Input, Select, DatePicker, InputNumber } from 'antd';
-import { buildings } from '../assets/data/Data.CoworkingSpace'
+import { buildings } from '../assets/data/DataHub'
 import { ButtonType } from '../utils/ButtonType';
 
 export const BookingDetails: React.FC = () => {

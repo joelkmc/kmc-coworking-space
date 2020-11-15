@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Typography } from 'antd';
-import { featColData1, featColData2 } from '../../assets/data/Data.CoworkingSpace';
+import { featColData1, featColData2 } from '../../assets/data/DataHub';
 
 const { Title, Paragraph } = Typography;
 
