@@ -4,14 +4,14 @@ import { Button } from 'antd'
 interface ButtonTypeProps {
   buttonType : "text" | "link" | "ghost" | "default" | "primary" | "dashed" | undefined;
   buttonProperties?: string;
-  text: string;
+  text?: string;
   disabled?: boolean;
   buttonClass?: string;
   handleClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 
 export const ButtonType: React.FC<ButtonTypeProps> = (
-  { buttonType, buttonClass = '', text, handleClick, buttonProperties, disabled, }
+  { buttonType, buttonClass = '', text, handleClick, buttonProperties, disabled, children }
 ) => {
     return (
 
@@ -23,6 +23,7 @@ export const ButtonType: React.FC<ButtonTypeProps> = (
         onClick={ handleClick }
       >
         { text }
+        { children }
       </Button>
 
     );

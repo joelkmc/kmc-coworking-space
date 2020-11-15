@@ -14,18 +14,18 @@ interface ModalCompProps {
 
 export const ModalComp: React.FC<ModalCompProps> = ({ inlineStyle, childComp, modalState, handleClose, width = 520, footer = null, closeIcon, className }) => {
 
-    return (
-      <Modal 
-        width={ width }
-        centered
-        visible={ modalState }
-        closeIcon={ closeIcon ? '' : 'Close' }
-        className= {`loginModal px-2 ${className}`}
-        footer={ footer }
-        maskClosable={ true }
-        onCancel={ handleClose }
-        bodyStyle={{ padding: '2.6rem 1.5rem', ...inlineStyle }}>
-        { childComp }
-      </Modal>
-    );
+  return (
+    <Modal 
+      width={ width }
+      centered
+      visible={ modalState }
+      closeIcon={ closeIcon ? '' : 'Close' }
+      className= {`loginModal px-2 ${className}`}
+      footer={ footer }
+      maskClosable={ true }
+      onCancel={ handleClose }
+      bodyStyle={{ padding: '2.6rem 1.5rem', ...inlineStyle }}>
+      { childComp }
+    </Modal>
+  );
 }

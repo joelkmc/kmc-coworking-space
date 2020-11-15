@@ -24,7 +24,7 @@ const Dashboard: React.FC = () => {
     <HubLayout navKey={'1'}>
       <NotificationComp type='danger'>
         <p className='text-xl font-proxiExtraBold'>COVID-19 Advisory</p>
-        <p>We highly encourage all community members to read the new guidelines prior to returning to our workspaces. Follow this link to view the guidelines: <Link to='/covid-advisory' target='_blank' className='text-black'>https://bit.ly/2Zn5YkG</Link></p>
+        <p>We highly encourage all community members to read the new guidelines prior to returning to our workspaces. Follow this link to view the guidelines: <a href='https://bit.ly/2Zn5YkG' target='_blank' rel="noreferrer" className='text-black'>https://bit.ly/2Zn5YkG</a></p>
       </NotificationComp>
       <NotificationComp type='danger'>
         <p className='text-xl font-proxiExtraBold'>Please confirm your email.</p>

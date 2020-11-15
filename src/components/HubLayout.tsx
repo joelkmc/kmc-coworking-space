@@ -6,6 +6,7 @@ import { UserOutlined, DownOutlined, CalendarOutlined, AppstoreOutlined, SoundOu
 
 import passportIcon from '../assets/images/passport-pin.svg';
 import passportLogo from '../assets/images/passport-logo.svg';
+import { TopNavItems } from './layout/menuItems';
 
 const { Content, Sider } = Layout;
 
@@ -18,8 +19,8 @@ const HubLayout: React.FC<HubLayoutProps> = ({ children, navKey }) => {
   const profileMenu = () => {
     return(
       <Menu mode="inline">
-        <Menu.Item className='px-10'>
-          Profile
+        <Menu.Item className='px-10' >
+          <Link to='/hub/account/profile'>Profile</Link>
         </Menu.Item>
         <Menu.Item className='px-10'>
           Logout
@@ -82,7 +83,7 @@ const HubLayout: React.FC<HubLayoutProps> = ({ children, navKey }) => {
             style={{ paddingLeft: '30px' }} 
             icon={ <SoundOutlined style={{ fontSize: '20px' }} /> }
           >
-            Events
+            <a href='https://kmc.solutions/events' target='_blank' rel="noreferrer" className='default__sider-link hover:text-kmcOrange'>Events</a>
           </Menu.Item>
         </Menu>
       </Sider>
@@ -112,13 +113,7 @@ const HubLayout: React.FC<HubLayoutProps> = ({ children, navKey }) => {
         {/* Header Navigation */}
         <Menu className='bg-white flex justify-end items-center px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 fixed w-full z-20' style={{ height: '60px' }}>
         
-          <Space>
-            <Avatar icon={ <UserOutlined /> } />
-            <p>Firstname Lastname</p>
-            <Dropdown overlay={ profileMenu } className='cursor-pointer'>
-              <DownOutlined style={{ fontSize:10 }} />
-            </Dropdown>
-          </Space>
+          <TopNavItems/>
           
         </Menu>
 
