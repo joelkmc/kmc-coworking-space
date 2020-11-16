@@ -10,8 +10,9 @@ import { NotificationComp } from '../components/Notification';
 import kmcBanner from '../assets/images/kmc-coworking-passport-banner.jpg'
 import { StarFilled } from '@ant-design/icons'
 import { ButtonType } from '../utils/ButtonType';
+import { Link } from 'react-router-dom';
 
-const Dashboard: React.FC = () => {
+const DashboardCoworking: React.FC = () => {
   
   // Read More Button Modal State and Methods
   const [ readMoreModalState, handleReadMoreClose, handleReadMoreOpen ] = useModalState(false);
@@ -37,7 +38,8 @@ const Dashboard: React.FC = () => {
       <Card className='p-4 rounded mt-2 md:mt-3 xl:mt-4'>
         <p>
           <StarFilled className='text-kmcOrange pr-1' />
-          Coworking Space Rates & Packaged | Virtual Office
+          Coworking Space Rates & Packaged | 
+          <Link to='/hub/virtual-office' className='text-kmcOrange'> Virtual Office</Link>
         </p>
         <Divider className='bg-kmcOrange my-2' style={{ height: '2px' }} />
 
@@ -82,4 +84,4 @@ const Dashboard: React.FC = () => {
   );
 }
 
-export default Dashboard;
+export default DashboardCoworking;
