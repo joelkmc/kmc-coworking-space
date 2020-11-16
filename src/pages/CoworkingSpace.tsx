@@ -33,7 +33,7 @@ export default function CoworkingSpace() {
         {/* Locations Section */}
         <Row>
           <Col span={23} md={22} xl={16} className='mx-auto bg'>
-            <LocationSection />
+            <LocationSection type='coworking' />
           </Col>
         </Row>
       </Content>

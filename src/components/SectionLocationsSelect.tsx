@@ -1,26 +1,40 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { Select, Carousel } from 'antd';
-import { locations, buildings } from '../assets/data/DataHub'
+import { locations, buildings, buildingsVirtual, locationsVirtual } from '../assets/data/DataHub'
 import { locationsCarouselSettings } from '../utils/CarouselSetting';
 import { LocationsCard } from './LocationsCard';
 
 const { Option } = Select;
 
 interface LocationSectionProps {
-  hubPage?: boolean
+  hubPage?: boolean;
+  type?: 'coworking' | 'virtual';
 }
 
-const LocationSection: React.FC<LocationSectionProps> = ({hubPage = false}) => {
-  console.log('section location')
+const LocationSection: React.FC<LocationSectionProps> = ({hubPage = false, type}) => {
 
   // Buildings Array State and Method
   const [buildingsState, setBuildingsState] = useState<any[]>(buildings);
+  const [locationsState, setLocationsState] = useState(locations);
+
+  useMemo(() => {
+    if(type === 'coworking') {
+      setBuildingsState(buildings)
+      setLocationsState(locations)
+    }
+    if(type === 'virtual') {
+      setBuildingsState(buildingsVirtual)
+      setLocationsState(locationsVirtual)
+    }
+  }, [type])
 
   //@ handleLocationChange filters the card items
   //  filter buildings based on selected locations
   const handleLocationChange = (value:string) => {
 
-    const filterBuildings:any[] = buildings.filter(building => {
+    const initialBuildings = type === 'coworking' ? buildings : buildingsVirtual;
+
+    const filterBuildings:any[] = initialBuildings.filter(building => {
       if(value === 'BGC') {
         return building.city === 'Taguig';
       }
@@ -57,7 +71,7 @@ const LocationSection: React.FC<LocationSectionProps> = ({hubPage = false}) => {
                 className='font-proxiExtraBold text-xl text-kmcOrange' 
                 style={{marginBottom: 0}}
               >
-                Ready to book your next Coworking Space?
+                Ready to book your next { type === 'coworking' ? 'Coworking Space?' : 'Virtual Office?' }
               </h4>
             ) : ''
           }
@@ -75,15 +89,15 @@ const LocationSection: React.FC<LocationSectionProps> = ({hubPage = false}) => {
           onChange={ handleLocationChange }
         >
           {
-            locations.map(location => {
+            locationsState.map((building, i) => {
               return(
-              <Option 
-                key={locations.indexOf(location)} 
-                value={location}
-              >
-                { location }
-              </Option>
-              )
+                <Option 
+                  key={ i } 
+                  value={ building }
+                >
+                  { building }
+                </Option>
+                )
             })
           }
         </Select>

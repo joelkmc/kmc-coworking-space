@@ -22,6 +22,281 @@ import skyrise4b from '../images/skyrise-4b.jpg'
 import smAura from '../images/sm-aura.jpg'
 import uptownPlace from '../images/uptown-place-tower2.jpg'
 
+import virtualRufino from '../images/rufino.jpg'
+import virtualZetta from '../images/virtual-office-zeta.jpg'
+import virtualVCorp from '../images/virtual-office-v-corporate.jpg'
+import virtualUptown from '../images/virtual-office-uptown.jpg'
+import virtualSMAura from '../images/virtual-office-sm-aura.jpg'
+import virtualSkyrise from '../images/virtual-office-skyrise.jpg'
+import virtualSigma from '../images/virtual-office-sigma.jpg'
+import virtualRowckwellSheridan from '../images/virtual-office-rockwell-sheridan.png'
+import virtualRowckwellBusiness3 from '../images/virtual-office-rockwell-business-3.jpg'
+import virtualRowckwellBusiness from '../images/virtual-office-rockwell-business.jpg'
+import virtualOneGriffinstone from '../images/virtual-office-one-griffinstone.jpg'
+import virtualNetQuad from '../images/virtual-office-net-quad.jpg'
+import virtualGamma from '../images/virtual-office-gamma.webp'
+import virtualFrabelle from '../images/virtual-office-frabelle.webp'
+
+export const buildingsVirtual = [
+  {
+    name: "V Corporate Centre",
+    address: "9th Flr. V-Corporate Centre, 125 L.P Leviste St., Salcedo Vill., Brgy. San Lorenzo",
+    city: "Makati",
+    state: "Metro Manila - RDO 050",
+    country: "Philippines",
+    postalCode: "1227",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "KMC serviced office on the 5th Floor of V Corporate Centre is currently one of the largest flexible office spaces in Makati City, Metro Manila. Through KMC virtual office service, your outsourced staff will receive seats inside our private offices. Other benefits, such as the use of the business address for registration and private room use, are available through our different packages. ",
+    img: virtualVCorp,
+    buildingEmail: "vcorporate@kmc.solutions",
+    entityId: 2,
+    entity: null,
+    id: 15,
+    isActive: true
+  },
+  {
+    name: "Rufino Pacific Tower",
+    address: "Unit A, 29th Flr., Rufino Pacific Tower, 6784, Ayala Ave. cor. V.A. Rufino St., Legaspi Vill., Brgy. San Lorenzo",
+    city: "Makati",
+    state: "Metro Manila - RDO 047",
+    country: "Philippines",
+    postalCode: "1229",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "KMC offers Virtual office in Rufino Pacific Tower, Ayala Avenue. Makati City. Through our virtual office service, your outsourced staff will receive seats inside our private offices. Other benefits, such as the use of the business address for registration and private room use, are available through our different packages. These features the Prestigious Metro-Manila & Cebu Addresses, Professional Reception Service, Call Filtering and Transfer, PEZA Registered Building, Personalized Voicemail, Receive Mail on your behalf, Professional call answering & forwarding, Meeting Rooms, and Email Notification",
+    img: virtualRufino,
+    buildingEmail: null,
+    entityId: 4,
+    entity: null,
+    id: 16,
+    isActive: true
+  },
+  {
+    name: "SM Aura Office Tower",
+    address: "11th Floor, SM Aura Office Tower, 26th Street corner McKinley Parkway, Fort Bonifacio",
+    city: "Taguig",
+    state: "Metro Manila - RDO 044",
+    country: "Philippines",
+    postalCode: "1634",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "SM Aura Premier Office Tower is a 29-storey dedicated private office and serviced office building with an area of 40,424 square meters. It was built according to international green standards, ensuring energy efficiency, as well as maintaining its operations' sustainability. KMC features 4 kinds of virtual office space packages which are the BASIC, PREMIUM, ELITE, EXTRA ELITE.",
+    img: virtualSMAura,
+    buildingEmail: "aura@kmc.solutions",
+    entityId: 1,
+    entity: null,
+    id: 18,
+    isActive: true
+  },
+  {
+    name: "Rockwell Business Center Tower 1",
+    address: "5th Flr, Rockwell Business Center Tower 1, Meralco Ave., Brgy. Ugong",
+    city: "Pasig",
+    state: "Metro Manila - RDO 043",
+    country: "Philippines",
+    postalCode: "1604",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "The Rockwell Business Center Tower 1 is a 16-storey commercial building that contains multiple serviced offices and flexible office spaces for rent in Ortigas, Pasig City. Outsourced your talented staff here in the Philippines and get the best virtual office package that suits their needs. ",
+    img: virtualRowckwellBusiness,
+    buildingEmail: null,
+    entityId: 3,
+    entity: null,
+    id: 19,
+    isActive: true
+  },
+  {
+    name: "Robinsons Cyberscape Gamma",
+    address: "15th Flr, Robinsons Cyberscape Gamma Bldg, Topaz and Ruby Rds, Ortigas Center",
+    city: "Pasig",
+    state: "Metro Manila - RDO 043",
+    country: "Philippines",
+    postalCode: "1600",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "KMC offers a virtual office space in Cyberscape Gamma which is 37-storey building in Ortigas. Your outsourced staff will receive seats inside our private offices. Other benefits, such as the use of the business address for registration and private room use, are available through our different packages",
+    img: virtualGamma,
+    buildingEmail: null,
+    entityId: 6,
+    entity: null,
+    id: 20,
+    isActive: true
+  },
+  {
+    name: "Skyrise 4 Cebu IT Park",
+    address: "18th Floor, Skyrise Building 4, Cebu I.T. Park, Barangay Apas, Lahug",
+    city: "Cebu - RDO 082",
+    state: "Visayas",
+    country: "Philippines",
+    postalCode: "6000",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "Skyrise 4 is part of the Asiatown IT Park located in Lahug, Cebu City. Developed by Skyrise Realty Development Corporation. KMC offers Virtual Office in Skyrise 4, Cebu IT Park for the outsourced staff here in the Philippines.",
+    img: virtualSkyrise,
+    buildingEmail: "skyrise@kmc.solutions",
+    entityId: 1,
+    entity: null,
+    id: 21,
+    isActive: true
+  },
+  {
+    name: "Rockwell Sheridan 1",
+    address: "10th Flr., Rockwell Business Center, Sheridan South Tower, Brgy. Highway Hills",
+    city: "Mandaluyong",
+    state: "Metro Manila - RDO 041",
+    country: "Philippines",
+    postalCode: "1554",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "The Rockwell Business Center Sheridan Tower 1 is a 16-storey Class A office building in Mandaluyong City. KMC offers a plug and play serviced offices like a virtual office, coworking space and private office for rent. You can now outsourced your staff and get the best virtual office package that wills surely suit the needs of your talented staff.",
+    img: virtualRowckwellSheridan,
+    buildingEmail: "sheridan@kmc.solutions",
+    entityId: 3,
+    entity: null,
+    id: 22,
+    isActive: true
+  },
+  {
+    name: "One Griffinstone",
+    address: "9th Flr., One Griffinstone Bldg, Commerce Avenue cor. Spectrum, Midway, Alabang",
+    city: "Muntinlupa",
+    state: "Metro Manila - RDO 053B",
+    country: "Philippines",
+    postalCode: "1780",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "KMC offers a virtual office in the newest building in Alabang which is the One Griffinstone. This office features the modern workspace having different serviced offices and a training/events room.",
+    img: virtualOneGriffinstone,
+    buildingEmail: "og@kmc.solutions",
+    entityId: 7,
+    entity: null,
+    id: 23,
+    isActive: true
+  },
+  {
+    name: "Frabelle Corporate Plaza",
+    address: "17th Floor, Frabelle Corporate Plaza, Tordesillas cor. Baustista St. , Salcedo Village, Bel-Air",
+    city: "Makati",
+    state: "Metro Manila - RDO 050",
+    country: "Philippines",
+    postalCode: "1209",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "KMC offers Virtual Office and Coworking Spaces in Makati inside Frabelle Corporate Plaza will mark the company's third outing in one of the country's premier business districts. Your outsourced staff will receive a seats depending on our virtual packages.",
+    img: virtualFrabelle,
+    buildingEmail: null,
+    entityId: 2,
+    entity: null,
+    id: 24,
+    isActive: true
+  },
+  {
+    name: "Picadilly Star",
+    address: "20th, 24th, and 25th Floor, 4th Avenue corner 27th Street, BGC",
+    city: "Taguig",
+    state: "Metro Manila - RDO 044",
+    country: "Philippines",
+    postalCode: "1630",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "The 26-story, PEZA-accredited building is an ideal choice for companies from any industry, particularly those in the IT-BPO, Marketing, IT, Advertising, and PR field. Packed with modern amenities and situated in a business-centric neighborhood, its location also gives easy access to Bonifacio Global City and the Makati Central Business District where a complete array of retail and service establishments are present.",
+    img: virtualFrabelle,
+    buildingEmail: null,
+    entityId: 1,
+    entity: null,
+    id: 39,
+    isActive: true
+  },
+  {
+    name: "Cyber Sigma - Virtual Office",
+    address: "Lawton Avenue, Bonifacio South",
+    city: "BGC Taguig",
+    state: "Metro Manila - RDO 044",
+    country: "Philippines",
+    postalCode: "1634",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "Sigma Cyber Sigma is a class A office building in Lawton Avenue, Bonifacio South, Taguig City offering 42,660 sq. m. of Gross Leasable Area. Providing over 20 storeys of commercial and office real estate, its location also gives easy access to Bonifacio Global City and the Makati Central Business District where a complete array of retail and service establishments are present. ",
+    img: virtualSigma,
+    buildingEmail: null,
+    entityId: 1,
+    entity: null,
+    id: 40,
+    isActive: true
+  },
+  {
+    name: "Uptown Place - Virtual Office",
+    address: "11th Drive, Uptown Bonifacio",
+    city: "BGC Taguig",
+    state: "Metro Manila - RDO 044",
+    country: "Philippines",
+    postalCode: "1634",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "Uptown Place Tower 2 is a 19-storey building that’s part of an Uptown Bonifacio township development and is located along the 11th avenue at BGC, Taguig. This building holds a LEED silver certification and has over 14 office floors, with KMC Solutions' flexible office spaces occupying 2 of its floors on the 19th and 20th.",
+    img: virtualUptown,
+    buildingEmail: null,
+    entityId: 1,
+    entity: null,
+    id: 41,
+    isActive: true
+  },
+  {
+    name: "Rockwell Business Center Tower 3 - Virtual Office",
+    address: "100 Ortigas Ave.",
+    city: "Pasig",
+    state: "Metro Manila - RDO 043",
+    country: "Philippines",
+    postalCode: "1604",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "Located at the Meralco Complex in Ortigas, the Rockwell Business Center Tower 3 is the building adjacent to KMC’s managed office facility in tower 1, situated in a compound filled with several other office buildings, restaurants, and lifestyle amenities such as gyms. Built within its own mini-community, anyone who works at this building will hardly ever have to leave the neighborhood for they can easily find numerous things to do inside the complex.",
+    img: virtualRowckwellBusiness3,
+    buildingEmail: null,
+    entityId: 1,
+    entity: null,
+    id: 43,
+    isActive: true
+  },
+  {
+    name: "Robinsons Zeta Tower Virtual Office",
+    address: "C5 Road Ugong Norte",
+    city: "Quezon City",
+    state: "Metro Manila - RDO 040",
+    country: "Philippines",
+    postalCode: null,
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "The Robinsons Zeta Tower, with a typical floor plate 2,435sqm, is located inside Robinson's newest township development, Bridgetown Complex, that bridges two major cities (Quezon & Pasig city) and is its own self-contained community. The 20-storey, pre-certified LEED Silver building is placed in a community that has more than just towering office buildings around the area. The Bridgetown Complex also houses several condominium establishments, restaurants, a grocery, and even their very own shopping mall. Everything you’ll ever need will be within your reach when working at the Zeta Tower, even providing workers the option to live nearby for less of a hassle.",
+    img: virtualZetta,
+    buildingEmail: null,
+    entityId: 1,
+    entity: null,
+    id: 44,
+    isActive: true
+  },
+  {
+    name: "Four/Neo",
+    address: "4th Avenue, Bonifacio Global City, Metro Manila",
+    city: "Taguig City ",
+    state: "Metro Manila - RDO 044",
+    country: "Philippines",
+    postalCode: "1630",
+    selectedServices: null,
+    servicesAvailable: "Virtual Office",
+    description: "Register your business with a prestigious and professional business address in Four/NEO utilizing one of the country's top business districts in BGC, Taguig.",
+    img: virtualNetQuad,
+    buildingEmail: null,
+    entityId: 1,
+    entity: null,
+    id: 45,
+    isActive: true
+  }
+]
+
+
+// Coworking Space
 export const buildings = [
   {
     id: 1,
@@ -153,7 +428,20 @@ export const locations = [
   'Mandaluyong',
   'Muntinlupa',
   'Ortigas',
-  'Quezon City'
+  'Quezon City',
+]
+
+export const locationsVirtual = [
+  'Makati',
+  'Taguig',
+  'Pasig',
+  'Cebu - RDO 082',
+  'Mandaluyong',
+  'Muntinlupa',
+  'Taguig',
+  'BGC Taguig',
+  'Quezon City',
+  'Taguig City'
 ]
 
 
@@ -232,7 +520,7 @@ export const featColData2 = [
   },
 ]
 
-export const readMoreData = [
+export const coworkingReadMoreData = [
   'Access to all KMC Coworking Locations',
   '24/7 Unlimited daily access',
   'Free 2 hours use of meeting rooms/boardrooms per Month',
@@ -241,6 +529,27 @@ export const readMoreData = [
   'Free Coffee',
   'Printing & Photocopying',
   'Access to join KMC Webinars'
+]
+
+export const starterReadMoreData = [
+  'Use of business address (not for registration purposes)',
+  'SMS or Email Notification',
+  'Use of Hotdesk/Coworking area for 1 pax',
+  'Free Access to Meeting Rooms',
+  'Complimentary Water/Tea/Coffee',
+  'Access to Other Site Locations'
+]
+
+export const goldReadMoreData = [
+  'Use of Business Address for local Registration',
+  'SMS or Email Notification',
+  'Scan and Email Services',
+  'Local & International Maill Forwarding (at cost)',
+  'Receive Malls of Parcel on your behalf',
+  'Use of Hotdesk/Coworking area for 1 pax',
+  'Free Access to Meeting Rooms',
+  'Complimentary Water/Tea/Coffee',
+  'Access to Other Site Locations'
 ]
 
 export const bookingData = [

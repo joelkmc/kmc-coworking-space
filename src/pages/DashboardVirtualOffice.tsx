@@ -15,14 +15,20 @@ import { Link } from 'react-router-dom';
 
 const DashboardVirtualOffice: React.FC = () => {
 
-  // Read More Button Modal State and Methods
-  const [ readMoreModalState, handleReadMoreClose, handleReadMoreOpen ] = useModalState(false);
+  // Starter Modal State and Methods
+  const [ starterModalState, handleStarterClose, handleStarterOpen ] = useModalState(false);
+
+  // Gold Modal State and Methods
+  const [ goldModalState, handleGoldClose, handleGoldOpen ] = useModalState(false);
+  
+  // Platinum Modal State and Methods
+  const [ platinumModalState, handlePlatinumClose, handlePlatinumOpen ] = useModalState(false);
 
   // Book Now Button Modal State and Methods
   const [ bookingModalState, handleBookingFormClose, handleBookingFormOpen ] = useModalState(false);
 
   return (
-    <HubLayout navKey=''>
+    <HubLayout navKey={'1'}>
       <NotificationComp type='danger'>
         <p className='text-xl font-proxiExtraBold'>COVID-19 Advisory</p>
         <p>We highly encourage all community members to read the new guidelines prior to returning to our workspaces. Follow this link to view the guidelines: <a href='https://bit.ly/2Zn5YkG' target='_blank' rel="noreferrer" className='text-black'>https://bit.ly/2Zn5YkG</a></p>
@@ -39,7 +45,7 @@ const DashboardVirtualOffice: React.FC = () => {
       <Card className='p-4 rounded mt-2 md:mt-3 xl:mt-4'>
         <p>
           <StarFilled className='text-kmcOrange pr-1' />
-          Coworking Space Rates & Packaged | 
+            Virtual Office Rates & Packages | 
           <Link to='/hub' className='text-kmcOrange'> Coworking Space</Link>
         </p>
         <Divider className='bg-kmcOrange my-2' style={{ height: '2px' }} />
@@ -63,7 +69,7 @@ const DashboardVirtualOffice: React.FC = () => {
             buttonClass='my-1 font-proxiSemiBold text-kmcOrange border-kmcOrange hover:bg-kmcOrange hover:text-white hover:border-kmcOrange'
             text='Read More'
             buttonType='default'
-            handleClick={ handleReadMoreOpen }
+            handleClick={ handleStarterOpen }
           />
         </div>
 
@@ -88,7 +94,7 @@ const DashboardVirtualOffice: React.FC = () => {
             buttonClass='my-1 font-proxiSemiBold text-kmcOrange border-kmcOrange hover:bg-kmcOrange hover:text-white hover:border-kmcOrange'
             text='Read More'
             buttonType='default'
-            handleClick={ handleReadMoreOpen }
+            handleClick={ handleGoldOpen }
           />
         </div>
 
@@ -113,7 +119,7 @@ const DashboardVirtualOffice: React.FC = () => {
             buttonClass='my-1 font-proxiSemiBold text-kmcOrange border-kmcOrange hover:bg-kmcOrange hover:text-white hover:border-kmcOrange'
             text='Read More'
             buttonType='default'
-            handleClick={ handleReadMoreOpen }
+            handleClick={ handlePlatinumOpen }
           />
         </div>
 
@@ -121,16 +127,24 @@ const DashboardVirtualOffice: React.FC = () => {
       </Card>
 
       {/* Locations Select Section */}
-      <SectionLocationsSelect hubPage={ true } />
-
-      {/* Read More Modal */}
-      <ReadMoreModal handleBookingFormOpen={ handleBookingFormOpen } handleReadMoreClose={ handleReadMoreClose } readMoreModalState={ readMoreModalState } />
+      <SectionLocationsSelect hubPage={ true } type='virtual' />
 
       {/* Book Now Modal Component */}
       <BookNowModal
         bookingModalState = { bookingModalState }
         handleBookingFormClose = { handleBookingFormClose }
       />
+      
+      {/* Read More Platinum Modal */}
+      <ReadMoreModal handleBookingFormOpen={ handleBookingFormOpen } handleReadMoreClose={ handlePlatinumClose } readMoreModalState={ platinumModalState } type='platinum' />
+      
+      {/* Read More Starter Modal */}
+      <ReadMoreModal handleBookingFormOpen={ handleBookingFormOpen } handleReadMoreClose={ handleStarterClose } readMoreModalState={ starterModalState } type='starter' />
+
+      {/* Read More Gold Modal */}
+      <ReadMoreModal handleBookingFormOpen={ handleBookingFormOpen } handleReadMoreClose={ handleGoldClose } readMoreModalState={ goldModalState } type='gold' />
+
+
       
     </HubLayout>
   );

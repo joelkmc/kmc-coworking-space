@@ -99,7 +99,7 @@ const HeroSection: React.FC = () => {
       </Col>
 
       {/* Read More Modal */}
-      <ReadMoreModal handleBookingFormOpen={ handleBookingFormOpen } handleReadMoreClose={ handleReadMoreClose } readMoreModalState={ readMoreModalState } />
+      <ReadMoreModal handleBookingFormOpen={ handleBookingFormOpen } handleReadMoreClose={ handleReadMoreClose } readMoreModalState={ readMoreModalState } type='coworking' />
 
       {/* Book Now Modal Component */}
       <BookNowModal

@@ -69,10 +69,10 @@ const DashboardCoworking: React.FC = () => {
       </Card>
 
       {/* Locations Select Section */}
-      <SectionLocationsSelect hubPage={ true } />
+      <SectionLocationsSelect hubPage={ true } type='coworking' />
 
       {/* Read More Modal */}
-      <ReadMoreModal handleBookingFormOpen={ handleBookingFormOpen } handleReadMoreClose={ handleReadMoreClose } readMoreModalState={ readMoreModalState } />
+      <ReadMoreModal handleBookingFormOpen={ handleBookingFormOpen } handleReadMoreClose={ handleReadMoreClose } readMoreModalState={ readMoreModalState } type='coworking' />
 
       {/* Book Now Modal Component */}
       <BookNowModal

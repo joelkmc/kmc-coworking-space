@@ -88,6 +88,7 @@ export const LocationsCard: React.FC<LocationsCardProps> = ({id,name,img,address
                 src={ img } 
                 alt={ img } 
                 className='object-cover w-full h-full'
+                style={{ maxHeight: '80vh' }}
               />
               <div className="absolute inset-0 bg-black opacity-25 h-full flex flex-col"></div>
             </figure>
