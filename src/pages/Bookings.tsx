@@ -31,12 +31,12 @@ const Booking: React.FC = () => {
       {
         key: i,
         plan: <p>{data.plan}</p>,
-        bookingNum: <Link to={ `/hub/bookings/${data.id}` } className='text-kmcOrange'>{data.bookingNum}</Link>,
+        bookingNum: <Link to={ `/hub/bookings/${ data.id }` } className='text-kmcOrange'>{data.bookingNum}</Link>,
         bookingDate: <p>{data.bookingDate}</p>,
         paymentMade: <p>&#8369; {formatNumToPhp(data.paymentMade)}</p>,
         paymentRemaining: <p>&#8369; {formatNumToPhp(data.paymentRemaining)}</p>,
         status: <p>{data.status}</p>,
-        viewInvoice: <Link to='/' className='text-kmcOrange'>View Invoice</Link>
+        viewInvoice: <Link to={`/hub/bookings/invoice/${ data.id }`} className='text-kmcOrange'>View Invoice</Link>
       })
     )
     return formattedData;
