@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import HubLayout from '../components/HubLayout';
 import { Card, Space } from 'antd';
 import { NotificationComp } from '../components/Notification';
 import { ButtonType } from '../utils/ButtonType';
 import { PrinterOutlined } from '@ant-design/icons';
+import { Badge } from '../components/Badge';
 
 import kmcLogo from '../assets/images/kmc-logo-2018.webp';
 import paypal from '../assets/images/paypal.svg';
 import { PaypalCheckout } from '../components/invoice/PaypalCheckout';
-import { ModalComp } from '../utils/ModalComp';
-
-
 
 interface bookingStateParams {
   id: string | undefined;
@@ -42,7 +40,7 @@ export const Invoice: React.FC = () => {
     (
       <>
         {/* Invoice Card */}
-        <Card id='invoiceToPrint' className='py-4 rounded mt-3 px-6'>
+        <Card id='invoiceToPrint' className='py-4 rounded mt-3 px-1 md:px-3 lg:px-6'>
           <figure>
             <img src={ kmcLogo } alt={ kmcLogo } style={{ height: '40px', width: 'auto' }} />
           </figure>
@@ -57,7 +55,7 @@ export const Invoice: React.FC = () => {
                 VAT Reg. No.: 007-930-327-000<br/>
               </p>
               <p className='mt-5'>Bill To:</p>
-              <p className='font-proxiSemiBold'>Firsname Lastname</p>
+              <p className='font-proxiSem iBold'>Firsname Lastname</p>
               <p>sample@email.com</p>
             </div>
 
@@ -74,9 +72,9 @@ export const Invoice: React.FC = () => {
           <table className="table-fixed w-full text-center">
             <thead>
               <tr>
-                <th className="px-4 py-2 w-3/5 border font-proxiExtraBold">Product Description</th>
-                <th className="px-4 py-2 w-1/6 border font-proxiExtraBold">Quantity</th>
-                <th className="px-4 py-2 w-1/5 border font-proxiExtraBold">Price</th>
+                <th className="p-0 md:px-2 lg:px-4 w-3/6 py-2 border font-proxiExtraBold">Product Description</th>
+                <th className="p-0 md:px-2 lg:px-4 w-1/6 py-2 border font-proxiExtraBold">Quantity</th>
+                <th className="p-0 md:px-2 lg:px-4 w-2/6 py-2 border font-proxiExtraBold">Price</th>
               </tr>
             </thead>
             <tbody>
@@ -138,9 +136,9 @@ export const Invoice: React.FC = () => {
         </NotificationComp>
 
         <Space className='w-full justify-between'>
-          <ButtonType buttonType='default' buttonClass='border-red-600'>
-            <p className='font-proxiSemiBold text-red-600 '>PENDING</p>
-          </ButtonType>
+
+          <Badge type='danger' title='PENDING' />
+  
           <Space>
             <ButtonType buttonType='primary' buttonClass='flex items-center bg-gray-800 border-none' handleClick={ printInvoice}>
               <PrinterOutlined className='font text-lg' />
