@@ -101,7 +101,7 @@ export const BookingTable: React.FC<BookingTableProps> = ({ tableType }) => {
   // if booking has existing seat owner return link to single booking page
   // if no seat owner return link to add seat owner page
   const seatOwnersLength = (booking:bookingType) => {
-    if (booking.seatOwners.length) {
+    if (!booking.seatOwners.length) {
       return (
         <Link 
         className='text-kmcOrange'

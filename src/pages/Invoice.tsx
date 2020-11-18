@@ -7,23 +7,7 @@ import { PrinterOutlined } from '@ant-design/icons';
 import { Badge } from '../components/Badge';
 
 import kmcLogo from '../assets/images/kmc-logo-2018.webp';
-import paypal from '../assets/images/paypal.svg';
 import { PaypalCheckout } from '../components/invoice/PaypalCheckout';
-
-interface bookingStateParams {
-  id: string | undefined;
-  plan: string | undefined;
-  bookingNum: string | undefined;
-  bookingDate: string | undefined;
-  paymentMade: number | undefined;
-  paymentRemaining: number | undefined;
-  status: string | undefined;
-  dateFrom: string | undefined;
-  dateTo: string | undefined;
-  termsInMonths: number | undefined;
-  seatQuantity: number | undefined;
-  totalDue: number | undefined;
-}
 
 export const Invoice: React.FC = () => {
 
@@ -127,7 +111,7 @@ export const Invoice: React.FC = () => {
 
   return (
 
-    <HubLayout navKey=''>
+    <HubLayout navKey='2'>
 
       <div className="px-5">
         <NotificationComp type='danger'>

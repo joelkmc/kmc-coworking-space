@@ -23,6 +23,9 @@ function App() {
 
           <Route exact path='/hub' component={ DashboardCoworking } />
           <Route exact path='/hub/virtual-office' component={ DashboardVirtualOffice } />
+          <Route path='/hub/s/coworking-space' component={ CoworkingSpace } />
+          <Route exact path='/hub/account/profile' component={ Profile }/>
+          <Route exact path='/hub/account/profile/edit' component={ ProfileEdit }/>
 
           <BookingsProvider>
             <Route exact path='/hub/bookings' component={ Booking } />
@@ -31,9 +34,6 @@ function App() {
             <Route path='/hub/bookings/invoice/:bookingId' component={ Invoice } />
           </BookingsProvider>
           
-          <Route path='/hub/s/coworking-space' component={ CoworkingSpace } />
-          <Route exact path='/hub/account/profile' component={ Profile }/>
-          <Route exact path='/hub/account/profile/edit' component={ ProfileEdit }/>
         </Switch>
       </div>
     </Router>
